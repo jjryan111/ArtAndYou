@@ -241,6 +241,9 @@
     <Content Include="Views\Home\Image.cshtml" />
     <Content Include="Views\Home\Portfolio.cshtml" />
     <Content Include="Views\Home\Medium.cshtml" />
+    <Content Include="Views\Home\Painting.cshtml" />
+    <Content Include="Views\Home\Photography.cshtml" />
+    <Content Include="Views\Home\Sculpture.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
