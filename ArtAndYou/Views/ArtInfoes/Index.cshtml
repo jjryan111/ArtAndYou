@@ -15,6 +15,9 @@
             @Html.DisplayNameFor(model => model.Artist)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Year)
         </th>
         <th>
@@ -35,6 +38,9 @@
             @Html.DisplayFor(modelItem => item.Artist)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Year)
         </td>
         <td>
@@ -44,7 +50,7 @@
             @Html.DisplayFor(modelItem => item.Medium)
         </td>
         <td>
-            
+            <img src="@Url.Content(item.ImageUrl)" height="100" width="100"/>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
