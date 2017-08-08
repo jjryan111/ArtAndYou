@@ -101,6 +101,7 @@ namespace ArtAndYou.Controllers
         }
         public ActionResult Choice(Medium M)
         {
+            ViewBag.Name = M.firstName;
             return View(M.medium);
         }
         public ActionResult Test()
