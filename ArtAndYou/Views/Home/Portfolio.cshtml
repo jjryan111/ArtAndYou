@@ -4,39 +4,68 @@
 
 <h2>Portfolio</h2>
 
-<p id="ourPic">@ViewBag.ApiText</p>
-
 <html>
-<body>
+    <body>
 
-    <p id="demo"></p>
+        <p id="demo"></p>
 
-    @ViewBag.ObjectID
+        @*@ViewBag.ObjectID*@
 
-    <script>
+        <script>
+            var x = "";
+            x = @ViewBag.ObjectID00;
+        </script>
 
+        <a href="http://www.harvardartmuseums.org/collections/object/" + x>See object 1</a> 
+
+        @ViewBag.ObjectID00
+        <br />
+        @ViewBag.ObjectID01
+        <br />
+        @ViewBag.ObjectID02
+        <br />
+        @ViewBag.ObjectID03
+        <br />
+        @ViewBag.ObjectID04
+        <br />
+        @ViewBag.ObjectID05
+        <br />
+        @ViewBag.ObjectID06
+        <br />
+        @ViewBag.ObjectID07
+        <br />
+        @ViewBag.ObjectID08
+        <br />
+        @ViewBag.ObjectID09
+        <br />
+
+        @*<script>
         var text = "";
         var i;
 
-        //var objID = ViewBag.ObjectID;
-        //var objectIDs = new string[10];
-        //objectIDs = objID.Split(' ');
+        var objID = ViewBag.ObjectID;
+        var objectIDs = new string[10];
+        objectIDs = objID.Split(' ');
 
-        //for (i = 0; i < objectIDs.length; i++)
-        //{
-        //    text += objectIDs[i] + "<br>";
-        //}
-        //document.getElementById("demo").innerHTML = text;
-
-        //var url = ViewBag.ObjectID;
-        var url = ["test0", "test1", "test2"];
-        for (i = 0; i < url.length; i++)
+        for (i = 0; i < objectIDs.length; i++)
         {
-            text += url[i] + "<br>";
+            text += objectIDs[i] + "<br>";
         }
         document.getElementById("demo").innerHTML = text;
-    </script>
-</body>
+
+        ////var url = ViewBag.ObjectID;
+        //var url = ["test0", "test1", "test2"];
+        //for (i = 0; i < url.length; i++)
+        //{
+        //    text += url[i] + "<br>";
+        //}
+        //document.getElementById("demo").innerHTML = text;
+    </script>*@
+
+        @*<p>test text</p>
+        <p>objectIDs</p>*@
+
+    </body>
 </html>
 
-<img src="@ViewBag.ApiText">
+@*<img src="@ViewBag.ApiText">*@

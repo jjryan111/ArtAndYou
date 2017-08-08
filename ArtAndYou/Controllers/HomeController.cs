@@ -14,9 +14,8 @@ namespace ArtAndYou.Controllers
 {
     public class HomeController : Controller
     {
-        int christopher = 0;
-        int thing = 0;
-
+        //Walters syntax: http://api.thewalters.org/v1/objects?apikey=<your_api_key> 
+        //Current API Key : xjygRMZElaE19rvIajAWGuBCY05UUFdP9GsaiCDNybj2DKEMi3HNdpC3Yl8RG5jW
 
         string size = "?height=300&width=300";
         string urlHeader = "http://api.harvardartmuseums.org";
@@ -34,12 +33,25 @@ namespace ArtAndYou.Controllers
             StreamReader rd = new StreamReader(response.GetResponseStream());
             string ApiText = rd.ReadToEnd();
             JObject o = JObject.Parse(ApiText);
-            string portfolio = "";
-            for (int i = 0; i < 10; i++)
-            {
-                portfolio += o["records"][i]["objectid"] + " ";
-            }
-            ViewBag.ObjectID = portfolio;
+
+            ViewBag.ObjectID00 = o["records"][0]["objectid"];
+            ViewBag.ObjectID01 = o["records"][1]["objectid"];
+            ViewBag.ObjectID02 = o["records"][2]["objectid"];
+            ViewBag.ObjectID03 = o["records"][3]["objectid"];
+            ViewBag.ObjectID04 = o["records"][4]["objectid"];
+            ViewBag.ObjectID05 = o["records"][5]["objectid"];
+            ViewBag.ObjectID06 = o["records"][6]["objectid"];
+            ViewBag.ObjectID07 = o["records"][7]["objectid"];
+            ViewBag.ObjectID08 = o["records"][8]["objectid"];
+            ViewBag.ObjectID09 = o["records"][9]["objectid"];
+
+            //string portfolio = "";
+            //int i = 0;
+            //for (i = 0; i < 10; i++)
+            //{
+            //    portfolio += o["records"][i]["objectid"] + " ";
+            //}
+            //ViewBag.ObjectID = portfolio;
             return View();
         }
 
