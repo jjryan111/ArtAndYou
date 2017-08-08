@@ -172,6 +172,8 @@
     <Compile Include="Models\ArtInfo.cs">
       <DependentUpon>ArtDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Medium.cs" />
+    <Compile Include="Models\Queries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +236,10 @@
     <Content Include="Views\ArtInfoes\Details.cshtml" />
     <Content Include="Views\ArtInfoes\Edit.cshtml" />
     <Content Include="Views\ArtInfoes\Index.cshtml" />
+    <Content Include="Views\Home\Data.cshtml" />
+    <Content Include="Views\Home\Image.cshtml" />
+    <Content Include="Views\Home\Portfolio.cshtml" />
+    <Content Include="Views\Home\Medium.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
