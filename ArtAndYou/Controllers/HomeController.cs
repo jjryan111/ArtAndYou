@@ -8,6 +8,8 @@ namespace ArtAndYou.Controllers
 {
     public class HomeController : Controller
     {
+        int christopher = 0;
+
         public ActionResult Index()
         {
             return View();
