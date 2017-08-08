@@ -16,6 +16,8 @@ namespace ArtAndYou.Controllers
     {
         //Walters syntax: http://api.thewalters.org/v1/objects?apikey=<your_api_key> 
         //Current API Key : xjygRMZElaE19rvIajAWGuBCY05UUFdP9GsaiCDNybj2DKEMi3HNdpC3Yl8RG5jW
+        //main access page for Walters account: http://api.thewalters.org/sgaccount/index
+        //All together, now: http://api.thewalters.org/v1/objects?apikey=xjygRMZElaE19rvIajAWGuBCY05UUFdP9GsaiCDNybj2DKEMi3HNdpC3Yl8RG5jW
 
         string size = "?height=300&width=300";
         string urlHeader = "http://api.harvardartmuseums.org";
