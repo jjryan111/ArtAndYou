@@ -182,6 +182,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\guh.jpg" />
     <Content Include="Content\Images\nw.jpg" />
+    <Content Include="Content\Images\The_Nightwatch_by_Rembrandt.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -242,10 +243,10 @@
     <Content Include="Views\Home\Data.cshtml" />
     <Content Include="Views\Home\Image.cshtml" />
     <Content Include="Views\Home\Portfolio.cshtml" />
-    <Content Include="Views\Home\Medium.cshtml" />
-    <Content Include="Views\Home\Photography.cshtml" />
-    <Content Include="Views\Home\Painting.cshtml" />
-    <Content Include="Views\Home\Sculpture.cshtml" />
+    <Content Include="Views\Medium\Medium.cshtml" />
+    <Content Include="Views\Medium\Photography.cshtml" />
+    <Content Include="Views\Medium\Painting.cshtml" />
+    <Content Include="Views\Medium\Sculpture.cshtml" />
     <Content Include="Views\Medium\Q1Genre.cshtml" />
     <Content Include="Views\Medium\Q2Category.cshtml" />
   </ItemGroup>

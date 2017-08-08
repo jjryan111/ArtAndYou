@@ -20,6 +20,8 @@ namespace ArtAndYou.Models
         {
             this.medium = medium;
             this.firstName = firstName;
+            this.genre = genre;
+            this.category = category;
         }
     }
 }
