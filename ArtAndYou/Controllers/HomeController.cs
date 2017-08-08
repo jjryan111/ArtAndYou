@@ -11,7 +11,7 @@ namespace ArtAndYou.Controllers
         int christopher = 0;
         int thing = 0;
         int Diane = 0;
-
+        int THingII = 0;
         public ActionResult Index()
         {
             return View();
