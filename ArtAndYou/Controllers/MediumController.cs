@@ -14,6 +14,15 @@ namespace ArtAndYou.Controllers
         {
             return View();
         }
+        public ActionResult Medium()
+        {
+            return View();
+        }
+        public ActionResult Choice(Medium M)
+        {
+            ViewBag.Name = M.firstName;
+            return View(M.medium);
+        }
         public ActionResult Q1Genre()
         {
            
@@ -22,6 +31,8 @@ namespace ArtAndYou.Controllers
         public ActionResult Q2Category(Medium m)
         {
             ViewBag.Genre = m.genre;
+            ViewBag.Name = m.firstName;
+            ViewBag.Medium = m.medium;
             return View();
         }
     }
