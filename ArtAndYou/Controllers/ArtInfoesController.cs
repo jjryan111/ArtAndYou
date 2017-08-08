@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ArtAndYou.Models;
+using System.Configuration;
+using System.Data.Sql;
 
 namespace ArtAndYou.Controllers
 {
@@ -123,5 +125,6 @@ namespace ArtAndYou.Controllers
             }
             base.Dispose(disposing);
         }
+       
     }
 }
