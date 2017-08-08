@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Portfolio";
+}
+
+<h2>Portfolio</h2>
+
+<p id="ourPic">@ViewBag.ApiText</p>
+
+<html>
+<body>
+
+    <p id="demo"></p>
+
+    @ViewBag.ObjectID
+
+    <script>
+
+        var text = "";
+        var i;
+
+        //var objID = ViewBag.ObjectID;
+        //var objectIDs = new string[10];
+        //objectIDs = objID.Split(' ');
+
+        //for (i = 0; i < objectIDs.length; i++)
+        //{
+        //    text += objectIDs[i] + "<br>";
+        //}
+        //document.getElementById("demo").innerHTML = text;
+
+        //var url = ViewBag.ObjectID;
+        var url = ["test0", "test1", "test2"];
+        for (i = 0; i < url.length; i++)
+        {
+            text += url[i] + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>
+
+<img src="@ViewBag.ApiText">
