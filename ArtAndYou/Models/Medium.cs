@@ -14,7 +14,8 @@ namespace ArtAndYou.Models
         public string medium { get; set; }
         [Key]
         public string firstName { get; set; }
-
+        public string genre { get; set; }
+        public string category { get; set; }
         public Medium()
         {
             this.medium = medium;
