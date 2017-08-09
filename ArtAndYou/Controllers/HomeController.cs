@@ -14,21 +14,22 @@ namespace ArtAndYou.Controllers
 {
     public class HomeController : Controller
     {
-        //Walters syntax: http://api.thewalters.org/v1/objects?apikey=<your_api_key> 
-        //Current API Key : xjygRMZElaE19rvIajAWGuBCY05UUFdP9GsaiCDNybj2DKEMi3HNdpC3Yl8RG5jW
-        //main access page for Walters account: http://api.thewalters.org/sgaccount/index
-        //All together, now: http://api.thewalters.org/v1/objects?apikey=xjygRMZElaE19rvIajAWGuBCY05UUFdP9GsaiCDNybj2DKEMi3HNdpC3Yl8RG5jW
-
-        string size = "?height=300&width=300";
+ 
+        string size = "?width=300";
         string urlHeader = "http://api.harvardartmuseums.org";
 
         string APIkey = "&apikey=db4038a0-79da-11e7-aa25-e32c9c02c857";
 
         public ActionResult Portfolio()
         {
-            string classification = "Photographs";
+            //For classification, we are using Photographs, Sculpture, Paintings, Furniture
+            string classification = "Furniture";
+            //For culture, we are using Japanese, European, American
+            string culture = "American";
+            //For century, example is "20th century"
+            string century = "18th%20century";
             Queries q = new Queries();
-            string portfolio = q.ImageSearch(classification);
+            string portfolio = q.ImageSearch(classification, culture, century);
             ViewBag.ObjectID = portfolio;
             return View();
         }
