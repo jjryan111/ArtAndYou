@@ -26,31 +26,9 @@ namespace ArtAndYou.Controllers
 
         public ActionResult Portfolio()
         {
-            string sampleSize = "&size=25";
-            string searchParam = "/object?classification=Paintings&sort=random";
-            //string param = "/object?person=33430&size=15";
-            //string param = "/object?classification=Photographs&hasimage=1";
-
-            HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org" + searchParam + sampleSize + APIkey);
-            request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            StreamReader rd = new StreamReader(response.GetResponseStream());
-            string ApiText = rd.ReadToEnd();
-            JObject o = JObject.Parse(ApiText);
-
-            string portfolio = "";
-            int i = 0;
-            for (i = 0; i < 50; i++)
-            {
-                try
-                {
-                    portfolio += o["records"][i]["images"][0]["baseimageurl"] + "?height=300&width=300" + ",";
-                }
-                catch (Exception)
-                {
-                    portfolio += "";
-                }
-            }
+            string classification = "Photographs";
+            Queries q = new Queries();
+            string portfolio = q.ImageSearch(classification);
             ViewBag.ObjectID = portfolio;
             return View();
         }
@@ -69,6 +47,35 @@ namespace ArtAndYou.Controllers
             JObject o = JObject.Parse(ApiText);
 
             ViewBag.ApiText = o["records"][0]["images"][0]["baseimageurl"] + size;
+            return View();
+        }
+
+        public ActionResult TextileInfo()
+        {
+            string param = "/object?classification=Textile%20Arts&size=100&sort=century&aggregation={%22by%20century%22:{%22terms%22:{%22field%22:%22century%22}}}";
+
+            HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org" + param + APIkey);
+            request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            StreamReader rd = new StreamReader(response.GetResponseStream());
+            string ApiText = rd.ReadToEnd();
+            JObject o = JObject.Parse(ApiText);
+            ViewBag.ApiText = o;
+            string textile = "";
+            int i = 0;
+            //textile = "Century: " + o["aggregations"]["by century"]["buckets"][i]["key"] + ",";
+            for (i = 0; i < 100; i++)
+            {
+                try
+                {
+                    textile += "Century: " + o["aggregations"]["by century"]["buckets"][i]["key"] + ",";
+                }
+                catch (Exception)
+                {
+                    textile += "";
+                }
+            }
+            ViewBag.Textiles = textile;
             return View();
         }
 
@@ -102,7 +109,7 @@ namespace ArtAndYou.Controllers
 
         public ActionResult CenturyInfo()
         {
-            string param = "/century?sort=century&size=100";
+            string param = "/century?sort=objectcount&sortorder=desc&size=100";
 
             HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org" + param + APIkey);
             request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
@@ -117,14 +124,14 @@ namespace ArtAndYou.Controllers
             {
                 try
                 {
-                    century += o["records"][i]["centuryid"] + " " + o["records"][i]["name"] + ",";
+                    century += "ID: " + o["records"][i]["centuryid"] + " Name: " + o["records"][i]["name"] + " Qty: " + o["records"][i]["objectcount"] + ",";
                 }
                 catch (Exception)
                 {
                     century += "";
                 }
             }
-            ViewBag.century = century;
+            ViewBag.Centuries = century;
             return View();
         }
 
@@ -193,7 +200,7 @@ namespace ArtAndYou.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "We Love Bringing Art In You";
 
             return View();
         }
