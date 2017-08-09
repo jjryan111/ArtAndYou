@@ -48,7 +48,7 @@ namespace ArtAndYou.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Artist,Year,Genre,Medium,ImageFile")] ArtInfo artInfo)
+        public ActionResult Create([Bind(Include = "ID,Artist,Title,Year,Genre,Medium,ImageUrl")] ArtInfo artInfo)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace ArtAndYou.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Artist,Year,Genre,Medium,ImageFile")] ArtInfo artInfo)
+        public ActionResult Edit([Bind(Include = "ID,Artist,Title,Year,Genre,Medium,ImageUrl")] ArtInfo artInfo)
         {
             if (ModelState.IsValid)
             {
