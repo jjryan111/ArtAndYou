@@ -38,39 +38,27 @@ namespace ArtAndYou.Controllers
             string ApiText = rd.ReadToEnd();
             JObject o = JObject.Parse(ApiText);
 
-            ViewBag.ObjectID00 = o["records"][0]["objectid"];
-            ViewBag.ObjectID01 = o["records"][1]["objectid"];
-            ViewBag.ObjectID02 = o["records"][2]["objectid"];
-            ViewBag.ObjectID03 = o["records"][3]["objectid"];
-            ViewBag.ObjectID04 = o["records"][4]["objectid"];
-            ViewBag.ObjectID05 = o["records"][5]["objectid"];
-            ViewBag.ObjectID06 = o["records"][6]["objectid"];
-            ViewBag.ObjectID07 = o["records"][7]["objectid"];
-            ViewBag.ObjectID08 = o["records"][8]["objectid"];
-            ViewBag.ObjectID09 = o["records"][9]["objectid"];
-
             string portfolio = "";
             int i = 0;
             for (i = 0; i < 50; i++)
             {
                 try
                 {
-                    portfolio +="<img src=\""+ o["records"][i]["images"][0]["baseimageurl"] + "\">*";
+                    portfolio += o["records"][i]["images"][0]["baseimageurl"] + "?height=300&width=300" + ",";
                 }
                 catch (Exception)
                 {
-                    portfolio += " ";
-                    //portfolio += o["records"][i]["objectid"] + " ";
+                    portfolio += "";
                 }
             }
-            string thing = "< img src = \"~/Content/Images/nw.jpg\" />< img src = \"~/Content/Images/The_Nightwatch_by_Rembrandt.jpg\" />";
-                ViewBag.ObjectID = portfolio;
-            ViewBag.Test = thing;
+            ViewBag.ObjectID = portfolio;
             return View();
         }
 
         public ActionResult Image()
         {
+            //for use with one image:
+
             string param = "/object?person=33430";
 
             HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org" + param + APIkey);
@@ -79,9 +67,7 @@ namespace ArtAndYou.Controllers
             StreamReader rd = new StreamReader(response.GetResponseStream());
             string ApiText = rd.ReadToEnd();
             JObject o = JObject.Parse(ApiText);
-            //ViewBag.ApiText = o["url"];
 
-            //for use with one image:
             ViewBag.ApiText = o["records"][0]["images"][0]["baseimageurl"] + size;
             return View();
         }
