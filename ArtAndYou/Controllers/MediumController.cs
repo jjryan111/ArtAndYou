@@ -9,6 +9,8 @@ namespace ArtAndYou.Controllers
 {
     public class MediumController : Controller
     {
+        public string name;
+        public string medium;
         // GET: Medium
         public ActionResult Index()
         {
@@ -20,7 +22,9 @@ namespace ArtAndYou.Controllers
         }
         public ActionResult Choice(Medium M)
         {
-            ViewBag.Name = M.firstName;
+            name = M.firstName;
+            medium = M.medium;
+            ViewBag.Name = name;
             return View(M.medium);
         }
         public ActionResult Q1Genre()
@@ -28,11 +32,9 @@ namespace ArtAndYou.Controllers
            
             return View();
         }
-        public ActionResult Q2Category(Medium m)
+        public ActionResult Q2Category(Medium M)
         {
-            ViewBag.Genre = m.genre;
-            ViewBag.Name = m.firstName;
-            ViewBag.Medium = m.medium;
+            ViewBag.Name = name;
             return View();
         }
     }

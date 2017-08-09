@@ -20,5 +20,7 @@ namespace ArtAndYou.Models
         public string Genre { get; set; }
         public string Medium { get; set; }
         public byte[] ImageFile { get; set; }
+        public string ImageUrl { get; set; }
+        public string Title { get; set; }
     }
 }
