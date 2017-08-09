@@ -252,6 +252,7 @@
     <Content Include="Views\Medium\Q1Genre.cshtml" />
     <Content Include="Views\Medium\Q2Category.cshtml" />
     <Content Include="Views\Home\ClassificationInfo.cshtml" />
+    <Content Include="Views\Home\CenturyInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

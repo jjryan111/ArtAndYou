@@ -22,8 +22,8 @@ namespace ArtAndYou.Controllers
         }
         public ActionResult Choice(Medium M)
         {
-            name = M.firstName;
-            medium = M.medium;
+            this.name = M.firstName;
+            this.medium = M.medium;
             ViewBag.Name = name;
             return View(M.medium);
         }

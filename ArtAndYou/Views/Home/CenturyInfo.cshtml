@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "CenturyInfo";
+}
+
+<h2>CenturyInfo</h2>
+@ViewBag.century
+
+<html>
+<body>
+    <p id="0">test</p>
+    <script>
+            var str = "@ViewBag.century";
+            var res = str.split(",");
+            var i = 0;
+            for (i = 0; i < 100; i++)
+            {
+                document.getElementById(0).innerHTML = res[0];
+            }
+    </script>
+
