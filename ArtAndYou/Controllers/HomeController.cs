@@ -85,17 +85,18 @@ namespace ArtAndYou.Controllers
             ViewBag.ApiText = o;
             string textile = "";
             int i = 0;
-            for (i = 0; i < 100; i++)
-            {
-                try
-                {
-                    textile += "Century: " + o["aggregations"]["by century"][i]["key"] + ",";
-                }
-                catch (Exception)
-                {
-                    textile += "";
-                }
-            }
+            textile = "Century: " + o["aggregations"]["by century"]["buckets"][i]["key"] + ",";
+            //for (i = 0; i < 100; i++)
+            //{
+            //    try
+            //    {
+            //        textile += "Century: " + o["aggregations"]["by century"]["buckets"][i]["key"] + ",";
+            //    }
+            //    catch (Exception)
+            //    {
+            //        textile += "";
+            //    }
+            //}
             ViewBag.Textiles = textile;
             return View();
         }
