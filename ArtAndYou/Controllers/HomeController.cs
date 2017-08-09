@@ -55,7 +55,7 @@ namespace ArtAndYou.Controllers
             {
                 try
                 {
-                    portfolio += o["records"][i]["images"][0]["baseimageurl"] + " ";
+                    portfolio +="<img src=\""+ o["records"][i]["images"][0]["baseimageurl"] + "\">*";
                 }
                 catch (Exception)
                 {
@@ -63,7 +63,9 @@ namespace ArtAndYou.Controllers
                     //portfolio += o["records"][i]["objectid"] + " ";
                 }
             }
-            ViewBag.ObjectID = portfolio;
+            string thing = "< img src = \"~/Content/Images/nw.jpg\" />< img src = \"~/Content/Images/The_Nightwatch_by_Rembrandt.jpg\" />";
+                ViewBag.ObjectID = portfolio;
+            ViewBag.Test = thing;
             return View();
         }
 

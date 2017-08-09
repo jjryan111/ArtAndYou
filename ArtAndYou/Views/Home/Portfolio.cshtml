@@ -1,72 +1,23 @@
-﻿@{
+﻿<script src="jquery-3.2.1.js"></script>
+<script src="~/Scripts/THing.js"></script>
+
+@{
     ViewBag.Title = "Portfolio";
 }
 
 <h2>Portfolio</h2>
 
 <html>
-    <body>
+<body>
+    <p id="demo"></p>
+            <script>
+                var str = "@ViewBag.ObjectID";
+                var res = str.split("*");
+                document.getElementById("demo").innerHTML = res;
+            </script>
+         
 
-        <p id="demo"></p>
-
-        @ViewBag.ObjectID
-        <br /><br />
-
-        @*<script>
-            var x = "";
-            x = @ViewBag.ObjectID00;
-        </script>
-
-        <a href="http://www.harvardartmuseums.org/collections/object/" + x>See object 1</a>*@ 
-
-        @ViewBag.ObjectID00
-        <br />
-        @ViewBag.ObjectID01
-        <br />
-        @ViewBag.ObjectID02
-        <br />
-        @ViewBag.ObjectID03
-        <br />
-        @ViewBag.ObjectID04
-        <br />
-        @ViewBag.ObjectID05
-        <br />
-        @ViewBag.ObjectID06
-        <br />
-        @ViewBag.ObjectID07
-        <br />
-        @ViewBag.ObjectID08
-        <br />
-        @ViewBag.ObjectID09
-        <br />
-
-        @*<script>
-        var text = "";
-        var i;
-
-        var objID = ViewBag.ObjectID;
-        var objectIDs = new string[10];
-        objectIDs = objID.Split(' ');
-
-        for (i = 0; i < objectIDs.length; i++)
-        {
-            text += objectIDs[i] + "<br>";
-        }
-        document.getElementById("demo").innerHTML = text;
-
-        ////var url = ViewBag.ObjectID;
-        //var url = ["test0", "test1", "test2"];
-        //for (i = 0; i < url.length; i++)
-        //{
-        //    text += url[i] + "<br>";
-        //}
-        //document.getElementById("demo").innerHTML = text;
-    </script>*@
-
-        @*<p>test text</p>
-        <p>objectIDs</p>*@
-
-    </body>
+</body>
 </html>
 
 @*<img src="@ViewBag.ApiText">*@
