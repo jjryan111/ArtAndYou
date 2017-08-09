@@ -27,7 +27,7 @@ namespace ArtAndYou.Controllers
         public ActionResult Portfolio()
         {
             string sampleSize = "&size=25";
-            string searchParam = "/object?classification=Paintings&sort=random";
+            string searchParam = "/object?classification=Textile%20Arts&sort=random";
             //string param = "/object?person=33430&size=15";
             //string param = "/object?classification=Photographs&hasimage=1";
 
@@ -72,6 +72,34 @@ namespace ArtAndYou.Controllers
             return View();
         }
 
+        public ActionResult TextileInfo()
+        {
+            string param = "/object?classification=Textile%20Arts&size=100&sort=century&aggregation={%22by%20century%22:{%22terms%22:{%22field%22:%22century%22}}}";
+
+            HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org" + param + APIkey);
+            request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            StreamReader rd = new StreamReader(response.GetResponseStream());
+            string ApiText = rd.ReadToEnd();
+            JObject o = JObject.Parse(ApiText);
+            ViewBag.ApiText = o;
+            string textile = "";
+            int i = 0;
+            for (i = 0; i < 100; i++)
+            {
+                try
+                {
+                    textile += "Century: " + o["aggregations"]["by century"][i]["key"] + ",";
+                }
+                catch (Exception)
+                {
+                    textile += "";
+                }
+            }
+            ViewBag.Textiles = textile;
+            return View();
+        }
+
         public ActionResult ClassificationInfo()
         {
             string param = "/classification?sort=objectcount&sortorder=desc&size=100";
@@ -102,7 +130,7 @@ namespace ArtAndYou.Controllers
 
         public ActionResult CenturyInfo()
         {
-            string param = "/century?sort=century&size=100";
+            string param = "/century?sort=objectcount&sortorder=desc&size=100";
 
             HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org" + param + APIkey);
             request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
@@ -117,14 +145,14 @@ namespace ArtAndYou.Controllers
             {
                 try
                 {
-                    century += o["records"][i]["centuryid"] + " " + o["records"][i]["name"] + ",";
+                    century += "ID: " + o["records"][i]["centuryid"] + " Name: " + o["records"][i]["name"] + " Qty: " + o["records"][i]["objectcount"] + ",";
                 }
                 catch (Exception)
                 {
                     century += "";
                 }
             }
-            ViewBag.century = century;
+            ViewBag.Centuries = century;
             return View();
         }
 

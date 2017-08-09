@@ -254,6 +254,7 @@
     <Content Include="Views\Home\ClassificationInfo.cshtml" />
     <Content Include="Views\Home\CenturyInfo.cshtml" />
     <Content Include="Views\Home\Divisions.cshtml" />
+    <Content Include="Views\Home\TextileInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
