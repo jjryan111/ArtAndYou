@@ -32,9 +32,10 @@ namespace ArtAndYou.Controllers
            
             return View();
         }
-        public ActionResult Q2Category(Medium M)
+        public ActionResult Q2Category(string name)
         {
-            ViewBag.Name = name;
+            ViewBag.Thing = "Hello World";
+            ViewBag.Name = this.name;
             return View();
         }
     }

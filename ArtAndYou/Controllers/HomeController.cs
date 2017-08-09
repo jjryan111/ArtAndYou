@@ -130,7 +130,7 @@ namespace ArtAndYou.Controllers
 
         public ActionResult Divisions()
         {
-            string param = "/object?division&size=100";
+            string param = "/object?sort=division&sortorder=desc&size=100";
 
             HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org" + param + APIkey);
             request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
@@ -145,14 +145,14 @@ namespace ArtAndYou.Controllers
             {
                 try
                 {
-                    division += o["records"][i]["divisionid"] + " " + o["records"][i]["name"] + ",";
+                    division += "ID: " + o["records"][i]["division"] + " Name: " + o["records"][i]["name"] + " Qty: " + o["records"][i]["objectcount"] + ",";
                 }
                 catch (Exception)
                 {
                     division += "";
                 }
             }
-            ViewBag.division = division;
+            ViewBag.divisions = division;
             return View();
         }
 
