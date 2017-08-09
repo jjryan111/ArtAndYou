@@ -74,7 +74,7 @@ namespace ArtAndYou.Controllers
 
         public ActionResult ClassificationInfo()
         {
-            string param = "/classification?sort=classificationid&size=100";
+            string param = "/classification?sort=objectcount&sortorder=desc&size=100";
 
             HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org" + param + APIkey);
             request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
@@ -89,7 +89,7 @@ namespace ArtAndYou.Controllers
             {
                 try
                 {
-                    classification += o["records"][i]["classificationid"] + " " + o["records"][i]["name"] + ",";
+                    classification += "ID: " + o["records"][i]["classificationid"] + " Name: " + o["records"][i]["name"] + " Qty: " + o["records"][i]["objectcount"] + ",";
                 }
                 catch (Exception)
                 {
