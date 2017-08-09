@@ -152,6 +152,7 @@
     <Compile Include="Controllers\ArtInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MediumController.cs" />
+    <Compile Include="Controllers\UserInfoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -175,6 +176,24 @@
     </Compile>
     <Compile Include="Models\Medium.cs" />
     <Compile Include="Models\Queries.cs" />
+    <Compile Include="Models\UserInfo.cs">
+      <DependentUpon>Users.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Users.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Users.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Users.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +217,16 @@
       <DependentUpon>ArtDB.edmx</DependentUpon>
       <LastGenOutput>ArtDB.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Users.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Users.edmx</DependentUpon>
+      <LastGenOutput>Users.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Users.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Users.edmx</DependentUpon>
+      <LastGenOutput>Users.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -209,6 +238,13 @@
     </EntityDeploy>
     <Content Include="Models\ArtDB.edmx.diagram">
       <DependentUpon>ArtDB.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Users.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Users.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Users.edmx.diagram">
+      <DependentUpon>Users.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\ArtNYou - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -254,6 +290,11 @@
     <Content Include="Views\Home\ClassificationInfo.cshtml" />
     <Content Include="Views\Home\CenturyInfo.cshtml" />
     <Content Include="Views\Home\Divisions.cshtml" />
+    <Content Include="Views\UserInfoes\Create.cshtml" />
+    <Content Include="Views\UserInfoes\Delete.cshtml" />
+    <Content Include="Views\UserInfoes\Details.cshtml" />
+    <Content Include="Views\UserInfoes\Edit.cshtml" />
+    <Content Include="Views\UserInfoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
