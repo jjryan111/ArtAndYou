@@ -26,12 +26,12 @@ namespace ArtAndYou.Controllers
 
         public ActionResult Portfolio()
         {
-
-
-            string param = "/object?person=33430";
+            string sampleSize = "&size=25";
+            string searchParam = "/object?classification=Paintings";
+            //string param = "/object?person=33430&size=15";
             //string param = "/object?classification=Photographs&hasimage=1";
 
-            HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org" + param + APIkey);
+            HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org" + searchParam + sampleSize + APIkey);
             request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader rd = new StreamReader(response.GetResponseStream());
@@ -51,7 +51,7 @@ namespace ArtAndYou.Controllers
 
             string portfolio = "";
             int i = 0;
-            for (i = 0; i < 10; i++)
+            for (i = 0; i < 50; i++)
             {
                 try
                 {
