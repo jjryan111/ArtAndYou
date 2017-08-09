@@ -9,13 +9,13 @@
 
 <html>
     <body>
-        <img src="nothing.jpg" id="0" name="image" />
-        <img src="nothing.jpg" id="1" name="image" />
-        <img src="nothing.jpg" id="2" name="image" />
-        <img src="nothing.jpg" id="3" name="image" />
-        <img src="nothing.jpg" id="4" name="image" />
-        <img src="nothing.jpg" id="5" name="image" />
-
+        <img src="nothing.jpg" id="0" name="image" alt=""/>
+        <img src="nothing.jpg" id="1" name="image" alt=""/>
+        <img src="nothing.jpg" id="2" name="image" alt=""/>
+        <img src="nothing.jpg" id="3" name="image" alt=""/>
+        <img src="nothing.jpg" id="4" name="image" alt=""/>
+        <img src="nothing.jpg" id="5" name="image" alt=""/>
+        @*<img src="image.png" onError="this.onerror=null;this.src='/images/noimage.gif';" />*@
         <script>
             var str = "@ViewBag.ObjectID";
             var res = str.split(",");

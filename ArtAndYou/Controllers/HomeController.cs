@@ -27,7 +27,7 @@ namespace ArtAndYou.Controllers
         public ActionResult Portfolio()
         {
             string sampleSize = "&size=25";
-            string searchParam = "/object?classification=Paintings";
+            string searchParam = "/object?classification=Paintings&sort=random";
             //string param = "/object?person=33430&size=15";
             //string param = "/object?classification=Photographs&hasimage=1";
 
