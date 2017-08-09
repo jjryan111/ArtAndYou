@@ -222,7 +222,7 @@ namespace ArtAndYou.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "We Love Bringing Art In You";
 
             return View();
         }
