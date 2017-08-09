@@ -128,6 +128,33 @@ namespace ArtAndYou.Controllers
             return View();
         }
 
+        public ActionResult Divisions()
+        {
+            string param = "/object?division&size=100";
+
+            HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org" + param + APIkey);
+            request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            StreamReader rd = new StreamReader(response.GetResponseStream());
+            string ApiText = rd.ReadToEnd();
+            JObject o = JObject.Parse(ApiText);
+
+            string division = "";
+            int i = 0;
+            for (i = 0; i < 100; i++)
+            {
+                try
+                {
+                    division += o["records"][i]["divisionid"] + " " + o["records"][i]["name"] + ",";
+                }
+                catch (Exception)
+                {
+                    division += "";
+                }
+            }
+            ViewBag.division = division;
+            return View();
+        }
 
         public ActionResult Data(Queries q)
         {
