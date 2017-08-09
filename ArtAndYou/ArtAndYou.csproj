@@ -181,8 +181,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\best-friends-abstract-colorful-mixed-media-painting-modern-art-prints.jpg" />
+    <Content Include="Content\Images\Earthrise.JPG" />
     <Content Include="Content\Images\guh.jpg" />
-    <Content Include="Content\Images\nw.jpg" />
+    <Content Include="Content\Images\louvre-portrait-de-lisa-gherardini-epouse-de-francesco-del-giocondo-dite-monna-lisa-la-gioconda-ou-la-jocon.jpg" />
+    <Content Include="Content\Images\Rodin the Thinker.JPG" />
+    <Content Include="Content\Images\The Wave.JPG" />
     <Content Include="Content\Images\The_Nightwatch_by_Rembrandt.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -254,6 +257,7 @@
     <Content Include="Views\Home\ClassificationInfo.cshtml" />
     <Content Include="Views\Home\CenturyInfo.cshtml" />
     <Content Include="Views\Home\Divisions.cshtml" />
+    <Content Include="Views\Medium\Q3Culture.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
