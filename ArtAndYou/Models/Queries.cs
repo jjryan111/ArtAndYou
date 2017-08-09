@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Net;
 
@@ -7,7 +8,9 @@ namespace ArtAndYou.Models
 {
     public class Queries
     {
+        //constructor; created by default if not here.
         public Queries() { }
+
         public string ImageSearch(string classification, string culture, string century)
         {
             string classSpec = classification;
@@ -37,12 +40,14 @@ namespace ArtAndYou.Models
             return portfolio;
         }
 
-        //public string SearchURL = urlHeader + param + APIkey;
-
-        //public string buildURL(string parameter)
-        //{
-        //    string url = urlHeader + param + APIkey;
-        //    return url;
-        //}
+    public class Location
+    {
+        [Required]
+        [Range(37, 41)]
+        public double Latitude { get; set; }
+        [Required]
+        [Range(-109, -102)]
+        public double Longitude { get; set; }
+    }
     }
 }

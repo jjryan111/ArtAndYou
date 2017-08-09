@@ -296,6 +296,7 @@
     <Content Include="Views\UserInfoes\Edit.cshtml" />
     <Content Include="Views\UserInfoes\Index.cshtml" />
     <Content Include="Views\Home\TextileInfo.cshtml" />
+    <Content Include="Views\Home\Query.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

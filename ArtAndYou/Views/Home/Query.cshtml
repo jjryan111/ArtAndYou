@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Query";
+}
+
+<h2>Query</h2>
+
+<body>
+    <form name="Query" onsubmit="return validateForm()" action="Portfolio" method="post">
+        <div class="col-md-12">
+            <div id="LatLength">
+                <br />*Latitude:<br>
+                <input type="range" orient="vertical" name="Latitude" oninput="Latitudevalue.value = Latitude.valueAsNumber" max="41" min="37" step=".001" value="37">
+                <output name="Latitudevalue" for="Latitude">37</output>
+                <br><br>
+            </div>
+
+            <div id="LonLength">
+                <br />*Longitude:<br>
+                <input type="range" name="Longitude" oninput="Longitudevalue.value = Longitude.valueAsNumber" max="-102" min="-109" step=".001" width="500">
+                <output name="Longitudevalue" for="Longitude">-109</output>
+                <br><br>
+            </div>
+
+            <input type="submit" value="Submit">
+            <br><br>
+
+            <p>Items marked with an asterisk (*) are required.</p>
+        </div>
+    </form>
+</body>

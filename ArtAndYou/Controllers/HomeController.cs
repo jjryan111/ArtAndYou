@@ -23,11 +23,11 @@ namespace ArtAndYou.Controllers
         public ActionResult Portfolio()
         {
             //For classification, we are using Photographs, Sculpture, Paintings, Furniture
-            string classification = "Furniture";
+            string classification = "Paintings";
             //For culture, we are using Japanese, European, American
             string culture = "American";
             //For century, example is "20th century"
-            string century = "18th%20century";
+            string century = "20th%20century";
             Queries q = new Queries();
             string portfolio = q.ImageSearch(classification, culture, century);
             ViewBag.ObjectID = portfolio;
@@ -203,6 +203,11 @@ namespace ArtAndYou.Controllers
         {
             ViewBag.Message = "We Love Bringing Art In You";
 
+            return View();
+        }
+
+        public ActionResult Query()
+        {
             return View();
         }
     }
