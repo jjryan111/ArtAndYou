@@ -212,5 +212,17 @@ namespace ArtAndYou.Controllers
         {
             return View();
         }
+
+        public ActionResult SlideShow(Input i)
+        {
+            string classification = i.Classification;
+            string culture = i.Culture;
+            string century = i.Century;
+
+            Queries q = new Queries();
+            string portfolio = q.ImageSearch(classification, culture, century);
+            ViewBag.ObjectID = portfolio;
+            return View();
+        }
     }
 }
