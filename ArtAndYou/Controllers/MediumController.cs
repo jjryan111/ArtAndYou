@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ArtAndYou.Models;
+using ArtAndYou.Controllers;
+using System.Data.Entity;
+using System.Data.Sql;
 
 namespace ArtAndYou.Controllers
 {
@@ -37,6 +40,16 @@ namespace ArtAndYou.Controllers
             ViewBag.Thing = "Hello World";
             ViewBag.Name = this.name;
             return View();
+        }
+        public ActionResult Edit([Bind(Include = "ID,Name,Classification,Century,Culture")] UserInfo userInfo)
+        {
+            if (ModelState.IsValid)
+            {
+                //db.Entry(userInfo).State = EntityState.Modified;
+                //db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(userInfo);
         }
     }
 }
