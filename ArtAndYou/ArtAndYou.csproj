@@ -200,9 +200,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\best-friends-abstract-colorful-mixed-media-painting-modern-art-prints.jpg" />
+    <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\guh.jpg" />
+    <Content Include="Content\Images\latepaper3.jpg" />
+    <Content Include="Content\Images\louvre-portrait-de-lisa-gherardini-epouse-de-francesco-del-giocondo-dite-monna-lisa-la-gioconda-ou-la-jocon.jpg" />
     <Content Include="Content\Images\nw.jpg" />
     <Content Include="Content\Images\The_Nightwatch_by_Rembrandt.jpg" />
+    <Content Include="Content\Images\vintage-old-paper-with-grunge-600x494.jpg" />
+    <Content Include="Content\Images\vintage-old-paper-with-grunge.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -246,6 +251,7 @@
     <Content Include="Models\Users.edmx.diagram">
       <DependentUpon>Users.edmx</DependentUpon>
     </Content>
+    <Content Include="fonts\BLKCHCRY.TTF" />
     <None Include="Properties\PublishProfiles\ArtNYou - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\THing.js" />
