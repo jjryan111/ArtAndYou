@@ -12,6 +12,7 @@ namespace ArtAndYou.Controllers
 {
     public class UserInfoesController : Controller
     {
+        string thing = "";
         private ArtInfoEntities1 db = new ArtInfoEntities1();
 
         // GET: UserInfoes
