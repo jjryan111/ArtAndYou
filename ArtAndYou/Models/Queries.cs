@@ -39,15 +39,39 @@ namespace ArtAndYou.Models
             }
             return portfolio;
         }
-
-    public class Location
-    {
-        [Required]
-        [Range(37, 41)]
-        public double Latitude { get; set; }
-        [Required]
-        [Range(-109, -102)]
-        public double Longitude { get; set; }
     }
+
+    public class Input
+    {
+
+        //string _century;
+
+        [Required]
+        public string Classification { get; set; }
+        [Required]
+        public string Culture { get; set; }
+        [Required]
+        public string Century { get; set; }
+        //{
+        //    get
+        //    {
+        //        return _century;
+        //    }
+        //    set
+        //    {
+        //        switch (_century)
+        //        {
+        //            case "21st":
+        //                _century = "recent";
+        //                break;
+        //            case "20th":
+        //                _century = "last";
+        //                break;
+        //            default:
+        //                _century = "default";
+        //                break;
+        //        }
+        //    }
+        //}
     }
 }

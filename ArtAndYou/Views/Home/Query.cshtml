@@ -6,22 +6,47 @@
 <h2>Query</h2>
 
 <body>
-    <form name="Query" onsubmit="return validateForm()" action="Portfolio" method="post">
+    <form name="Query" onsubmit="return validateForm()" action="Portfolio" method="get">
         <div class="col-md-12">
-            <div id="LatLength">
-                <br />*Latitude:<br>
-                <input type="range" orient="vertical" name="Latitude" oninput="Latitudevalue.value = Latitude.valueAsNumber" max="41" min="37" step=".001" value="37">
-                <output name="Latitudevalue" for="Latitude">37</output>
-                <br><br>
+            <div>
+                <br />*Classification:<br>
+                <select name="Classification">
+                    <option value="Paintings">Paintings</option>
+                    <option value="Sculpture">Sculpture</option>
+                    <option value="Photographs">Photographs</option>
+                    <option value="Prints">Prints</option>
+                    <option value="Drawings">Drawings</option>
+                    <option value="Textile%20Arts">Textile Arts</option>
+                </select>
             </div>
-
-            <div id="LonLength">
-                <br />*Longitude:<br>
-                <input type="range" name="Longitude" oninput="Longitudevalue.value = Longitude.valueAsNumber" max="-102" min="-109" step=".001" width="500">
-                <output name="Longitudevalue" for="Longitude">-109</output>
-                <br><br>
+            
+            <div>
+                <br />*Culture:<br>
+                <select name="Culture">
+                    <option value="American">American</option>
+                    <option value="German">German</option>
+                    <option value="French">French</option>
+                    <option value="Italian">Italian</option>
+                    <option value="British">British</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Byzantine">Byzantine</option>
+                    <option value="Greek">Greek</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Roman">Roman</option>
+                </select>
             </div>
-
+            <div>
+                <br />*Century:<br>
+                <select name="Century">
+                    <option value="21st%20century">21st Century</option>
+                    <option value="20th%20century">20th Century</option>
+                    <option value="19th%20century">19th Century</option>
+                    <option value="18th%20century">18th Century</option>
+                    <option value="17th%20century">17th Century</option>
+                    <option value="16th%20century">16th Century</option>
+                </select>
+            </div>
+            <br><br>
             <input type="submit" value="Submit">
             <br><br>
 
