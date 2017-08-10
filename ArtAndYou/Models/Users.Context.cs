@@ -15,6 +15,8 @@ namespace ArtAndYou.Models
     
     public partial class ArtInfoEntities1 : DbContext
     {
+        internal readonly object ArtInfoes;
+
         public ArtInfoEntities1()
             : base("name=ArtInfoEntities1")
         {

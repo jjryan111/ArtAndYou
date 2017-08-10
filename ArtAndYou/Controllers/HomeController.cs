@@ -9,13 +9,26 @@ using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using Newtonsoft.Json;
 using ArtAndYou.Models;
+using System.Data.Sql;
 
 namespace ArtAndYou.Controllers
 {
     public class HomeController : Controller
     {
- 
-        string size = "?width=300";
+        private ArtInfoEntities1 db = new ArtInfoEntities1();
+
+        public ActionResult CreateName1([Bind(Include = "ID,Name")] UserInfo UserInfo)
+        {
+            if (ModelState.IsValid)
+            {
+                db.UserInfoes.Add(UserInfo);
+                db.SaveChanges();
+                return RedirectToAction("../Survey/SurveyQ1");
+            }
+
+            return View();
+        }
+            string size = "?width=300";
         string urlHeader = "http://api.harvardartmuseums.org";
 
         string APIkey = "&apikey=db4038a0-79da-11e7-aa25-e32c9c02c857";

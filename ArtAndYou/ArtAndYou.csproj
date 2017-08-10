@@ -152,6 +152,7 @@
     <Compile Include="Controllers\ArtInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MediumController.cs" />
+    <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Controllers\UserInfoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -254,7 +255,6 @@
     <Content Include="fonts\BLKCHCRY.TTF" />
     <None Include="Properties\PublishProfiles\ArtNYou - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\slideShow.js" />
     <Content Include="Scripts\THing.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -304,7 +304,7 @@
     <Content Include="Views\UserInfoes\Index.cshtml" />
     <Content Include="Views\Home\TextileInfo.cshtml" />
     <Content Include="Views\Home\Query.cshtml" />
-    <Content Include="Views\Home\SlideShow.cshtml" />
+    <Content Include="Views\Survey\SurveyQ1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
