@@ -5,27 +5,26 @@
 
 <h2>Test</h2>
 
-
-@*<form name="Medium" id="MedForm" action="Choice" method="get">
-    First Name:
-    <br>
-    <input type="text" name="firstName">
-    <br>
-    <select name="medium">
-
-        <option value="Painting">Painting</option>
-        <option value="Photography">Photography</option>
-        <option value="Sculpture">Sculpture</option>
-    </select>
-    <inputtype="submit" id="MedSubmit" value="Submit">*@
-    <form name="Genre" id="ThingGen" action="Q2Category" method="get">
-        <h1> Paintings</h1>
-        <input type="radio" name="Classification" value="Paintings"><img src="~/Content/Images/best-friends-abstract-colorful-mixed-media-painting-modern-art-prints.jpg" height="250px"/><br />
-        <h1>Sculptures</h1>
-        <input type="radio" name="CLassification" value="Sculpture"><img src="~/Content/Images/Rodin the Thinker.JPG" height="250px"/><br />
-        <h1>Textiles</h1>
-        <input type="radio" name="CLassification" value="Sculpture"><img src="~/Content/Images/Rodin the Thinker.JPG" height="250px" /><br />
-        <h1>Prints</h1>
-        <input type="radio" name="CLassification" value="Sculpture"><img src="~/Content/Images/Rodin the Thinker.JPG" height="250px" /><br />
-        <input type="submit" id="MedSubmit" value="Submit">
+<form name="Genre" id="Choice1" action="Q2Category" method="get">
+    <table>
+        <tr>
+            <td>
+                <img src="https://artimages.blob.core.windows.net/artphoto/Edvard%20Munch%20The_Scream.jpg" height="250px" />
+            </td>
+            <td>
+                <img src="~/Content/Images/Rodin the Thinker.JPG" height="250px" />
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:center">
+                <h2>Painting</h2>
+                <input type="radio" name="Medium" value="Painting">
+            </td>
+            <td style="text-align:center">
+                <h2>Sculpture</h2>
+                <input type="radio" name="Medium" value="Sculpture">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" id="MedSubmit" value="Submit">
     </form>
