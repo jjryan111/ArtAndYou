@@ -5,25 +5,29 @@
     ViewBag.Title = "Portfolio";
 }
 
-<h1>Selections for You.</h1>
+<h1>Selections for You. This query returned <ins id="totalrecords"></ins> items.</h1>
 
-<h2>This query returned <ins id="totalrecords"></ins> items.</h2>
+<h2>Your choices indicate that you prefer <ins id="century"></ins>, <ins id="culture"></ins> <ins id="classification"></ins>.</h2>
 
 <html>
     
     <body>
-        <img src="nothing.jpg" id="1" name="image" alt=""/>
-        <img src="nothing.jpg" id="2" name="image" alt=""/>
-        <img src="nothing.jpg" id="3" name="image" alt=""/>
         <img src="nothing.jpg" id="4" name="image" alt=""/>
         <img src="nothing.jpg" id="5" name="image" alt=""/>
         <img src="nothing.jpg" id="6" name="image" alt=""/>
+        <img src="nothing.jpg" id="7" name="image" alt=""/>
+        <img src="nothing.jpg" id="8" name="image" alt=""/>
+        <img src="nothing.jpg" id="9" name="image" alt=""/>
         <script>
             var str = "@ViewBag.ObjectID";
             var res = str.split(",");
             var i = 0;
             document.getElementById("totalrecords").innerHTML = res[0];
-            for (i = 1; i < 7; i++)
+            document.getElementById("classification").innerHTML = res[1];
+            document.getElementById("culture").innerHTML = res[2];
+            document.getElementById("century").innerHTML = res[3];
+
+            for (i = 4; i < 10; i++)
             {
                 document.getElementById(i).src = res[i];
             }
