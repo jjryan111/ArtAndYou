@@ -2,29 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
+
 namespace ArtAndYou.Models
 {
-
     public class Survey
     {
-        [Required]
-        [Key]
-        public string medium { get; set; }
-        [Key]
-        public string firstName { get; set; }
-        [Key]
-        public string genre { get; set; }
-        [Key]
-        public string category { get; set; }
+        public string question;
+        public string cent;
+        public string cult;
+        public string classification;
 
         public Survey()
         {
-            this.medium = medium;
-            this.firstName = firstName;
-            this.genre = genre;
-            this.category = category;
+            this.question = question;
+            this.cent = cent;
+            this.cult = cult;
+            this.classification = classification;
+        }
+        public string ConCatChoice(string question, string classification, string choice)
+        {
+            return "Survey" + question + classification + choice;
         }
     }
 }
