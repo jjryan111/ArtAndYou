@@ -24,6 +24,9 @@ textarea {
 }
 #Contact{
     color:#FFFFFF;
+    background-size:auto;
+    background-repeat:repeat-y;
+
 }
 body {
     background-color: #000000;
