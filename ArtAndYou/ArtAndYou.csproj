@@ -255,6 +255,8 @@
     <Content Include="fonts\BLKCHCRY.TTF" />
     <None Include="Properties\PublishProfiles\ArtNYou - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\PreloadImages.js" />
+    <Content Include="Scripts\slideShow.js" />
     <Content Include="Scripts\THing.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -305,6 +307,7 @@
     <Content Include="Views\Home\TextileInfo.cshtml" />
     <Content Include="Views\Home\Query.cshtml" />
     <Content Include="Views\Survey\SurveyQ1.cshtml" />
+    <Content Include="Views\Home\SlideShow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
