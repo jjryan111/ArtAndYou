@@ -20,17 +20,16 @@ namespace ArtAndYou.Controllers
 
         string APIkey = "&apikey=db4038a0-79da-11e7-aa25-e32c9c02c857";
 
-        public ActionResult Portfolio(/*Input i*/)
+        public ActionResult Portfolio(Input i)
         {
-            //For classification, we are using Photographs, Sculpture, Paintings, Furniture
-            string classification = "Paintings";
-            //string classification = i.Classification;
-            //For culture, we are using Japanese, European, American
-            string culture = "American";
-            //string culture = i.Culture;
-            //For century, example is "20th century"
-            string century = "20th%20century";
-            //string century = i.Century;
+            //string classification = "Photographs";
+            //string culture = "American";
+            //string century = "20th%20century";
+
+            string classification = i.Classification;
+            string culture = i.Culture;
+            string century = i.Century;
+
             Queries q = new Queries();
             string portfolio = q.ImageSearch(classification, culture, century);
             ViewBag.ObjectID = portfolio;
