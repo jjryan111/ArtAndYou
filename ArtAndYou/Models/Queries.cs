@@ -26,6 +26,9 @@ namespace ArtAndYou.Models
             string ApiText = rd.ReadToEnd();
             JObject o = JObject.Parse(ApiText);
 
+            //set index[0] to number of records in query
+            portfolio += o["info"]["totalrecords"] + ",";
+
             for (int i = 0; i < 100; i++)
             {
                 try
