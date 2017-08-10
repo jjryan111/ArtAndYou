@@ -177,6 +177,7 @@
     </Compile>
     <Compile Include="Models\Medium.cs" />
     <Compile Include="Models\Queries.cs" />
+    <Compile Include="Models\Survey.cs" />
     <Compile Include="Models\UserInfo.cs">
       <DependentUpon>Users.tt</DependentUpon>
     </Compile>
@@ -201,10 +202,38 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\best-friends-abstract-colorful-mixed-media-painting-modern-art-prints.jpg" />
+    <Content Include="Content\Images\Century\Paint Cent Duchess of Devonshire.JPG" />
+    <Content Include="Content\Images\Century\Paint Cent Mona Lisa.JPG" />
+    <Content Include="Content\Images\Century\Paint Cent Rembrandt NightWatch.JPG" />
+    <Content Include="Content\Images\Century\Paint Cent Van Gogh StarryNight.JPG" />
+    <Content Include="Content\Images\Century\Paint Cent Vlad Tepes.JPG" />
+    <Content Include="Content\Images\Century\Paint CentMagritte_TheSonOfMan.jpg" />
+    <Content Include="Content\Images\Century\Photo Cent Dead at Antietam.JPG" />
+    <Content Include="Content\Images\Century\Photo Cent Milk Drop Coronet.JPG" />
+    <Content Include="Content\Images\Century\Photo Cent.JPG" />
+    <Content Include="Content\Images\Century\Sculpt Cent Bernini Apollo and Daphne.jpg" />
+    <Content Include="Content\Images\Century\Sculpt Cent Falconet Bronze Horseman.jpg" />
+    <Content Include="Content\Images\Century\Sculpt Cent Guy Laramee.JPG" />
+    <Content Include="Content\Images\Century\Sculpt Cent Sphinx.jpg" />
+    <Content Include="Content\Images\Century\Sculpt Cent Statue of Liberty.jpg" />
+    <Content Include="Content\Images\Century\Sculpt Cent Sylvia Shaw Savannah Bird Girl.jpg" />
+    <Content Include="Content\Images\Century\Sculpt Cent-Michelangelo%27s_Pieta_5450_cut_out_black.jpg" />
+    <Content Include="Content\Images\Culture\Paint Cult Grant Wood American Gothic.JPG" />
+    <Content Include="Content\Images\Culture\Paint Cult PicassoGuernica.jpg" />
+    <Content Include="Content\Images\Culture\Paint Cult The Wave.JPG" />
+    <Content Include="Content\Images\Culture\Photo Cult Dali Atomicus Halsman.JPG" />
+    <Content Include="Content\Images\Culture\Photo Cult Fort Peck Dam.JPG" />
+    <Content Include="Content\Images\Culture\Photo Cult Kumi Masashita Shadow Art.JPG" />
+    <Content Include="Content\Images\Culture\Sculpt Cult %27David%27_by_Michelangelo_Fir_JBU002.jpg" />
+    <Content Include="Content\Images\Culture\Sculpt Cult Daniel Chester Abraham Lincoln.jpg" />
+    <Content Include="Content\Images\Culture\Sculpt CultTianTanBuddha.jpg" />
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\guh.jpg" />
     <Content Include="Content\Images\latepaper3.jpg" />
     <Content Include="Content\Images\louvre-portrait-de-lisa-gherardini-epouse-de-francesco-del-giocondo-dite-monna-lisa-la-gioconda-ou-la-jocon.jpg" />
+    <Content Include="Content\Images\Main\Paint Main Dali Persistence.JPG" />
+    <Content Include="Content\Images\Main\Photo Main Winston Churchill.JPG" />
+    <Content Include="Content\Images\Main\Sculpt Main figma-the-table-museum-venus-de-milo-416511.1.jpg" />
     <Content Include="Content\Images\nw.jpg" />
     <Content Include="Content\Images\The_Nightwatch_by_Rembrandt.jpg" />
     <Content Include="Content\Images\vintage-old-paper-with-grunge-600x494.jpg" />
@@ -304,7 +333,10 @@
     <Content Include="Views\UserInfoes\Index.cshtml" />
     <Content Include="Views\Home\TextileInfo.cshtml" />
     <Content Include="Views\Home\Query.cshtml" />
-    <Content Include="Views\Survey\SurveyQ1.cshtml" />
+    <Content Include="Views\Survey\SurveyQ1Classification.cshtml" />
+    <Content Include="Views\Survey\Index.cshtml" />
+    <Content Include="Views\Survey\SurveyQ2PaintCent.cshtml" />
+    <Content Include="Views\Survey\SurveyQ3PaintCult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
