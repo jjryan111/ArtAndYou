@@ -1,0 +1,46 @@
+﻿<script src="~/Scripts/slideShow.js"></script>
+
+@{
+    ViewBag.Title = "SlideShow";
+}
+
+<h1>Selections for You. This query returned <ins id="totalrecords"></ins> items.</h1>
+
+<h2>Your choices indicate that you prefer <ins id="century"></ins>, <ins id="culture"></ins> <ins id="classification"></ins>.</h2>
+
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- For intranet testing only, remove in production. -->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Slide Show</title>
+</head>
+
+<body>
+    <div id="slideShowImages">
+        <img src="https://artimages.blob.core.windows.net/artphoto/Edvard%20Munch%20The_Scream.jpg" id="4" name="image" alt="Image 4" />
+        <img src="http://nrs.harvard.edu/urn-3:HUAM:INV175659N_dynmc?width=300" id="5" name="image" alt="Image 5" />
+        <img src="nothing.jpg" id="6" name="image" alt="Image 6" />
+        <img src="nothing.jpg" id="7" name="image" alt="Image 7" />
+        <img src="nothing.jpg" id="8" name="image" alt="Image 8" />
+        <img src="nothing.jpg" id="9" name="image" alt="Image 9" />
+    </div>
+    <button id="slideShowButton"></button> <!-- Optional button element. -->
+    <script src="slideShow.js"></script>
+    <script>
+        var str = "@ViewBag.ObjectID";
+        var res = str.split(",");
+        var i = 0;
+        document.getElementById("totalrecords").innerHTML = res[0];
+        document.getElementById("classification").innerHTML = res[1];
+        document.getElementById("culture").innerHTML = res[2];
+        document.getElementById("century").innerHTML = res[3];
+
+        for (i = 4; i < 10; i++)
+        {
+            document.getElementById(i).src = res[i];
+        }
+    </script>
+</body>
+
+</html>
