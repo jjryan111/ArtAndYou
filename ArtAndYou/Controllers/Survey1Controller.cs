@@ -13,7 +13,7 @@ namespace ArtAndYou.Controllers
     public class Survey1Controller : Controller
     {
         private ArtInfoEntities2 db = new ArtInfoEntities2();
-
+        private ArtInfoEntities1 db2 = new ArtInfoEntities1();
         // GET: Survey1
         public ActionResult Index()
         {
@@ -72,6 +72,20 @@ namespace ArtAndYou.Controllers
             }
             return View(survey1);
         }
+        ////public ActionResult ClassificationEdit(string id)
+        ////{
+        ////    if (id == null)
+        ////    {
+        ////        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        ////    }
+        ////    Survey1 survey1 = db.Survey1.Find(id);
+        ////    if (survey1 == null)
+        ////    {
+        ////        return HttpNotFound();
+        ////    }
+        ////    return View(survey1);
+        ////}
+
 
         // POST: Survey1/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -88,6 +102,8 @@ namespace ArtAndYou.Controllers
             }
             return View(survey1);
         }
+       
+
 
         // GET: Survey1/Delete/5
         public ActionResult Delete(string id)

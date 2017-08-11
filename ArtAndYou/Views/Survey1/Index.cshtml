@@ -9,38 +9,42 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </th>
-        <th></th>
-    </tr>
-    <tr>
-        @foreach (var item in Model)
-        {
+<form name="Medium" id="Choice1" action="~/Userinfoes/ClassificationEdit" method="get">
 
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th></th>
+        </tr>
+
+        <tr>
+            @foreach (var item in Model)
+            {
+
+                <td>
+                    <img src="@Url.Content(item.ImageUrl)" height="200" />
+                </td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.Medium }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.Medium }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.Medium })
+                    </td>*@
+
+            }
+        </tr>
+        <tr>
             <td>
-                <img src="@Url.Content(item.ImageUrl)" height="200" />
+                <input type="radio" name="classification" value="Paintings">
             </td>
-            @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { id=item.Medium }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.Medium }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Medium })
-                </td>*@
-
-        }
-    </tr>
-    <tr>
-        <td>
-            <input type="radio" name="classification" value="Paintings">
-        </td>
-        <td>
-            <input type="radio" name="classification" value="Sculpture">
-        </td>
-        <td>
-            <input type="radio" name="classification" value="Photographs">
-        </td>
-    </tr>
+            <td>
+                <input type="radio" name="classification" value="Sculpture">
+            </td>
+            <td>
+                <input type="radio" name="classification" value="Photographs">
+            </td>
+        </tr>
+    </table>
     <input type="submit" id="ClassSubmit" value="Submit">
-</table>
+</form>
