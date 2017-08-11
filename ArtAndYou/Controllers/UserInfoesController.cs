@@ -74,6 +74,34 @@ namespace ArtAndYou.Controllers
             return View(userInfo);
         }
 
+        public ActionResult ClassificationEdit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            UserInfo userInfo = db.UserInfoes.Find(id);
+            if (userInfo == null)
+            {
+                return HttpNotFound();
+            }
+            return View(userInfo);
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ClassificationEdit([Bind(Include = "ID,Classification")] UserInfo userInfo)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(userInfo).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index","Survey2");
+            }
+            return View(userInfo);
+        }
+
         // POST: UserInfoes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.

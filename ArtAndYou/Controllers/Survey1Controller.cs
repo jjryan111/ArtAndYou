@@ -72,19 +72,19 @@ namespace ArtAndYou.Controllers
             }
             return View(survey1);
         }
-        public ActionResult ClassificationEdit(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Survey1 survey1 = db.Survey1.Find(id);
-            if (survey1 == null)
-            {
-                return HttpNotFound();
-            }
-            return View(survey1);
-        }
+        ////public ActionResult ClassificationEdit(string id)
+        ////{
+        ////    if (id == null)
+        ////    {
+        ////        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        ////    }
+        ////    Survey1 survey1 = db.Survey1.Find(id);
+        ////    if (survey1 == null)
+        ////    {
+        ////        return HttpNotFound();
+        ////    }
+        ////    return View(survey1);
+        ////}
 
 
         // POST: Survey1/Edit/5
@@ -102,18 +102,7 @@ namespace ArtAndYou.Controllers
             }
             return View(survey1);
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult ClassificationEdit([Bind(Include = "ID,classification")] Survey1 survey1)
-        {
-            if (ModelState.IsValid)
-            {
-                db2.Entry(survey1).State = EntityState.Modified;
-                db2.SaveChanges();
-                return RedirectToAction("Index","Survey2");
-            }
-            return View(survey1);
-        }
+       
 
 
         // GET: Survey1/Delete/5
