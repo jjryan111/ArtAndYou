@@ -2,9 +2,9 @@
     ViewBag.Title = "Portfolio";
 }
 
-<h1>Selections for You. This query returned <ins id="totalrecords"></ins> items.</h1>
-
 <h2>Your choices indicate that you prefer <ins id="century"></ins>, <ins id="culture"></ins> <ins id="classification"></ins>.</h2>
+
+<h2>This query returned <ins id="totalrecords"></ins> items. A sampling for your enjoyment:</h2>
 
 <html>
     
@@ -22,7 +22,10 @@
             document.getElementById("totalrecords").innerHTML = res[0];
             document.getElementById("classification").innerHTML = res[1];
             document.getElementById("culture").innerHTML = res[2];
-            document.getElementById("century").innerHTML = res[3];
+
+            //remove the %20 (space for http urls)
+            var newcent = res[3].replace("%20c", " C");
+            document.getElementById("century").innerHTML = newcent;
 
             for (i = 4; i < 10; i++)
             {

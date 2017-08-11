@@ -18,7 +18,7 @@ namespace ArtAndYou.Models
             //string centurySpec = century;
             string APIkey = "&apikey=db4038a0-79da-11e7-aa25-e32c9c02c857";
             string portfolio = "";
-            string photoSize = "?width=300";
+            string photoSize = "?height=500";
             HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?classification=" + classification + "&culture=" + culture + "&century=" + century + "&sort=random&hasimage=1&size=100" + APIkey);
             request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -50,35 +50,11 @@ namespace ArtAndYou.Models
 
     public class Input
     {
-
-        //string _century;
-
         [Required]
         public string Classification { get; set; }
         [Required]
         public string Culture { get; set; }
         [Required]
         public string Century { get; set; }
-        //{
-        //    get
-        //    {
-        //        return _century;
-        //    }
-        //    set
-        //    {
-        //        switch (_century)
-        //        {
-        //            case "21st":
-        //                _century = "recent";
-        //                break;
-        //            case "20th":
-        //                _century = "last";
-        //                break;
-        //            default:
-        //                _century = "default";
-        //                break;
-        //        }
-        //    }
-        //}
     }
 }

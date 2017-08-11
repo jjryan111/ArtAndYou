@@ -58,3 +58,7 @@ input[type='radio'] {
 h2 {
     font-family: BLKCHCRY;
 }
+
+body#slideshowbody {
+    display: none;
+}
