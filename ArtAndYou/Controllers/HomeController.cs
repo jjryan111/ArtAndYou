@@ -9,7 +9,8 @@ using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using Newtonsoft.Json;
 using ArtAndYou.Models;
-using System.Data.Sql;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace ArtAndYou.Controllers
 {
@@ -32,6 +33,7 @@ namespace ArtAndYou.Controllers
             return View("Contact");
         }
             string size = "?width=300";
+
         string urlHeader = "http://api.harvardartmuseums.org";
 
         string APIkey = "&apikey=db4038a0-79da-11e7-aa25-e32c9c02c857";
