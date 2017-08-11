@@ -53,7 +53,7 @@ body {
     color: #FFFFFF !important;
 }
 input[type='radio'] {
-    transform: scale(1.5);
+    transform: scale(2);
 }
 h2 {
     font-family: BLKCHCRY;
