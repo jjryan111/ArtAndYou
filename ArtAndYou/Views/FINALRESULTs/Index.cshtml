@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ArtAndYou.Models.Survey3Results>
+﻿@model IEnumerable<ArtAndYou.Models.FINALRESULT>
 
 @{
     ViewBag.Title = "Index";
@@ -20,9 +20,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Genre)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -37,15 +34,9 @@
             @Html.DisplayFor(modelItem => item.Genre)
         </td>
         <td>
-            <img src="@Url.Content(item.ImageUrl)" height="100" width="100" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageUrl)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Genre }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Genre }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Genre })
         </td>
     </tr>
 }

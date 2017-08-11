@@ -150,6 +150,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArtInfoesController.cs" />
+    <Compile Include="Controllers\FINALRESULTsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MediumController.cs" />
     <Compile Include="Controllers\Survey1Controller.cs" />
@@ -180,6 +181,24 @@
     </Compile>
     <Compile Include="Models\ArtInfo.cs">
       <DependentUpon>ArtDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FinalResult.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalResult.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FINALRESULT.cs">
+      <DependentUpon>FinalResult.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FinalResult.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalResult.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FinalResult1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalResult.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Medium.cs" />
     <Compile Include="Models\Queries.cs" />
@@ -292,6 +311,16 @@
       <DependentUpon>ArtDB.edmx</DependentUpon>
       <LastGenOutput>ArtDB.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\FinalResult.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinalResult.edmx</DependentUpon>
+      <LastGenOutput>FinalResult.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\FinalResult.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinalResult.edmx</DependentUpon>
+      <LastGenOutput>FinalResult1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\SurveyViewsfromSQL.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SurveyViewsfromSQL.edmx</DependentUpon>
@@ -338,6 +367,13 @@
     </EntityDeploy>
     <Content Include="Models\SurveyViewsfromSQL.edmx.diagram">
       <DependentUpon>SurveyViewsfromSQL.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\FinalResult.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FinalResult.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\FinalResult.edmx.diagram">
+      <DependentUpon>FinalResult.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\ArtNYou - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -437,6 +473,11 @@
     <Content Include="Views\Surveytemp\Q2Category.cshtml" />
     <Content Include="Views\Surveytemp\Q3Culture.cshtml" />
     <Content Include="Views\Surveytemp\Sculpture.cshtml" />
+    <Content Include="Views\FINALRESULTs\Create.cshtml" />
+    <Content Include="Views\FINALRESULTs\Delete.cshtml" />
+    <Content Include="Views\FINALRESULTs\Details.cshtml" />
+    <Content Include="Views\FINALRESULTs\Edit.cshtml" />
+    <Content Include="Views\FINALRESULTs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
