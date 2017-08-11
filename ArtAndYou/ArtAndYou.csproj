@@ -284,6 +284,8 @@
     <Content Include="fonts\BLKCHCRY.TTF" />
     <None Include="Properties\PublishProfiles\ArtNYou - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\PreloadImages.js" />
+    <Content Include="Scripts\slideShow.js" />
     <Content Include="Scripts\THing.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -337,9 +339,7 @@
     <Content Include="Views\Survey\Index.cshtml" />
     <Content Include="Views\Survey\SurveyQ2PaintCent.cshtml" />
     <Content Include="Views\Survey\SurveyQ3PaintCult.cshtml" />
-    <Content Include="Views\Survey\SurveyQ2SculptCent.cshtml" />
-    <Content Include="Views\Survey\SurveyQ3SculptCult.cshtml" />
-    <Content Include="Views\Survey\Choice1.cshtml" />
+    <Content Include="Views\Home\SlideShow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
