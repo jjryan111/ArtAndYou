@@ -20,7 +20,7 @@ namespace ArtAndYou.Controllers
         public ActionResult Index(Medium M)
         {
             List <Survey1> thing = M.Details("5");
-            ViewBag.thing2 = thing[0].ToString();
+            ViewBag.thing2 = thing[1].ToString();
             ViewBag.Thing3 = "thing";
             return View();
         }
