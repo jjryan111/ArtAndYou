@@ -20,7 +20,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ImageUrl)
+            <img src="@Url.Content(item.ImageUrl)" height="100" width="100" />
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Medium }) |
