@@ -395,6 +395,11 @@
     <Content Include="Views\Survey\SurveyQ2PaintCent.cshtml" />
     <Content Include="Views\Survey\SurveyQ3PaintCult.cshtml" />
     <Content Include="Views\Home\SlideShow.cshtml" />
+    <Content Include="Views\Survey\Choice1.cshtml" />
+    <Content Include="Views\Survey\SurveyQ2PhotoCent.cshtml" />
+    <Content Include="Views\Survey\SurveyQ2SculptCent.cshtml" />
+    <Content Include="Views\Survey\SurveyQ3SculptCult.cshtml" />
+    <Content Include="Views\Survey\SurveyQ3PhotoCult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

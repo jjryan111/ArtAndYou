@@ -19,8 +19,9 @@ namespace ArtAndYou.Controllers
         string thing = "";
         private ArtInfoEntities1 db = new ArtInfoEntities1();
 
-     
+
         // GET: UserInfoes/Details/5
+        
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -53,12 +54,20 @@ namespace ArtAndYou.Controllers
         {
             return View();
         }
+        public ActionResult SurveyQ3SculptCult()
+        {
+            return View();
+        }
         public ActionResult SurveyQ2PaintCent()
         {
             return View();
         }
 
         public ActionResult SurveyQ1Classification()
+        {
+            return View();
+        }
+        public ActionResult SurveyQ3PhotoCult()
         {
             return View();
         }
