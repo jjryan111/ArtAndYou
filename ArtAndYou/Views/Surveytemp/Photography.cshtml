@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Photography";
+}
+
+<h2>Photography</h2>
+
+@ViewBag.ObjectID
+<br /><br />
+
+@*<script>
+        var x = "";
+        x = @ViewBag.ObjectID00;
+    </script>
+
+    <a href="http://www.harvardartmuseums.org/collections/object/" + x>See object 1</a>*@
+
+@ViewBag.ObjectID00
+<br />
+@ViewBag.ObjectID01
+<br />
+@ViewBag.ObjectID02
+<br />
+@ViewBag.ObjectID03
+<br />
+@ViewBag.ObjectID04
+<br />
+@ViewBag.ObjectID05
+<br />
+@ViewBag.ObjectID06
+<br />
+@ViewBag.ObjectID07
+<br />
+@ViewBag.ObjectID08
+<br />
+@ViewBag.ObjectID09
+<br />
+@*<script>
+        function myFunction() {
+            var text = "";
+            var i = 0;
+            var thing = "@ViewBag.ObjectID";
+            var obj = thing.Split(' ');
+            for (i = 0; i < 10; i++) {
+                text += "<p>" + i + "</p>";
+                //text += "<img src=\"" + obj[i] + "\" /img><br>";
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+    </script>*@
+@*<script>
+        var text = "";
+        var i;
+
+        var objID = ViewBag.ObjectID;
+        var objectIDs = new string[10];
+        objectIDs = objID.Split(' ');
+
+        for (i = 0; i < objectIDs.length; i++)
+        {
+            text += objectIDs[i] + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+
+        ////var url = ViewBag.ObjectID;
+        //var url = ["test0", "test1", "test2"];
+        //for (i = 0; i < url.length; i++)
+        //{
+        //    text += url[i] + "<br>";
+        //}
+        //document.getElementById("demo").innerHTML = text;
+    </script>*@
+
+@*<p>test text</p>
+    <p>objectIDs</p>*@
+@*<script>
+          var text = "";
+          var i;
+          var thing = @ViewBag.ObjectID;
+          var obj = thing.Split(' ');
+          for (i = 0; i < 5; i++) {
+                text += "The number is " + i + "<br>";
+          }
+          document.getElementById("demo").innerHTML = text;
+    </script>*@
+
+@*<button onclick="myFunction()">Try it</button>*@

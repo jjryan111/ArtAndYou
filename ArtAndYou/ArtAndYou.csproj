@@ -405,10 +405,41 @@
     <Content Include="Views\Survey1\Details.cshtml" />
     <Content Include="Views\Survey1\Edit.cshtml" />
     <Content Include="Views\Survey1\Index.cshtml" />
+    <Content Include="Views\Survey1results\Create.cshtml" />
+    <Content Include="Views\Survey1results\Delete.cshtml" />
+    <Content Include="Views\Survey1results\Details.cshtml" />
+    <Content Include="Views\Survey1results\Edit.cshtml" />
+    <Content Include="Views\Survey1results\Index.cshtml" />
+    <Content Include="Views\Survey2\Create.cshtml" />
+    <Content Include="Views\Survey2\Delete.cshtml" />
+    <Content Include="Views\Survey2\Details.cshtml" />
+    <Content Include="Views\Survey2\Edit.cshtml" />
+    <Content Include="Views\Survey2\Index.cshtml" />
+    <Content Include="Views\Survey2results\Create.cshtml" />
+    <Content Include="Views\Survey2results\Delete.cshtml" />
+    <Content Include="Views\Survey2results\Details.cshtml" />
+    <Content Include="Views\Survey2results\Edit.cshtml" />
+    <Content Include="Views\Survey2results\Index.cshtml" />
+    <Content Include="Views\Survey3\Create.cshtml" />
+    <Content Include="Views\Survey3\Delete.cshtml" />
+    <Content Include="Views\Survey3\Details.cshtml" />
+    <Content Include="Views\Survey3\Edit.cshtml" />
+    <Content Include="Views\Survey3\Index.cshtml" />
+    <Content Include="Views\Survey3results\Create.cshtml" />
+    <Content Include="Views\Survey3results\Delete.cshtml" />
+    <Content Include="Views\Survey3results\Details.cshtml" />
+    <Content Include="Views\Survey3results\Edit.cshtml" />
+    <Content Include="Views\Survey3results\Index.cshtml" />
+    <Content Include="Views\Surveytemp\Century.cshtml" />
+    <Content Include="Views\Surveytemp\Painting.cshtml" />
+    <Content Include="Views\Surveytemp\Photography.cshtml" />
+    <Content Include="Views\Surveytemp\Q1Genre.cshtml" />
+    <Content Include="Views\Surveytemp\Q2Category.cshtml" />
+    <Content Include="Views\Surveytemp\Q3Culture.cshtml" />
+    <Content Include="Views\Surveytemp\Sculpture.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Survey1results\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
