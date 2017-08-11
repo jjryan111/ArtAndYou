@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SurveySQLViewModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'ArtInfo.dbo.CurrentUser' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CurrentUser">
+          <Property Name="NewestUser" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ArtInfo.dbo.Survey1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Survey1">
+          <Key>
+            <PropertyRef Name="Medium" />
+          </Key>
+          <Property Name="Medium" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ArtInfo.dbo.Survey1Results' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Survey1Results">
+          <Key>
+            <PropertyRef Name="Medium" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Medium" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Classification" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ArtInfo.dbo.Survey2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Survey2">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Year" />
+          </Key>
+          <Property Name="Classification" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Year" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ArtInfo.dbo.Survey2Results' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Survey2Results">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Year" />
+          </Key>
+          <Property Name="Classification" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Year" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Century" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ArtInfo.dbo.Survey3' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Survey3">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Genre" />
+          </Key>
+          <Property Name="Classification" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Century" Type="nvarchar" MaxLength="50" />
+          <Property Name="Genre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ArtInfo.dbo.Survey3Results' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Survey3Results">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Genre" />
+          </Key>
+          <Property Name="Classification" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Century" Type="nvarchar" MaxLength="50" />
+          <Property Name="Genre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="SurveySQLViewModelsStoreContainer">
+          <EntitySet Name="Survey1" EntityType="Self.Survey1" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Survey1].[Medium] AS [Medium], 
+    [Survey1].[ImageUrl] AS [ImageUrl]
+    FROM [dbo].[Survey1] AS [Survey1]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Survey1Results" EntityType="Self.Survey1Results" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Survey1Results].[Medium] AS [Medium], 
+    [Survey1Results].[Classification] AS [Classification], 
+    [Survey1Results].[ImageUrl] AS [ImageUrl], 
+    [Survey1Results].[Name] AS [Name], 
+    [Survey1Results].[ID] AS [ID]
+    FROM [dbo].[Survey1Results] AS [Survey1Results]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Survey2" EntityType="Self.Survey2" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Survey2].[Classification] AS [Classification], 
+    [Survey2].[ID] AS [ID], 
+    [Survey2].[Year] AS [Year], 
+    [Survey2].[ImageUrl] AS [ImageUrl]
+    FROM [dbo].[Survey2] AS [Survey2]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Survey2Results" EntityType="Self.Survey2Results" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Survey2Results].[Classification] AS [Classification], 
+    [Survey2Results].[ID] AS [ID], 
+    [Survey2Results].[Year] AS [Year], 
+    [Survey2Results].[Century] AS [Century], 
+    [Survey2Results].[ImageUrl] AS [ImageUrl]
+    FROM [dbo].[Survey2Results] AS [Survey2Results]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Survey3" EntityType="Self.Survey3" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Survey3].[Classification] AS [Classification], 
+    [Survey3].[ID] AS [ID], 
+    [Survey3].[Century] AS [Century], 
+    [Survey3].[Genre] AS [Genre], 
+    [Survey3].[ImageUrl] AS [ImageUrl]
+    FROM [dbo].[Survey3] AS [Survey3]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Survey3Results" EntityType="Self.Survey3Results" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Survey3Results].[Classification] AS [Classification], 
+    [Survey3Results].[ID] AS [ID], 
+    [Survey3Results].[Century] AS [Century], 
+    [Survey3Results].[Genre] AS [Genre], 
+    [Survey3Results].[ImageUrl] AS [ImageUrl]
+    FROM [dbo].[Survey3Results] AS [Survey3Results]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SurveySQLViewModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Survey1">
+          <Key>
+            <PropertyRef Name="Medium" />
+          </Key>
+          <Property Name="Medium" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Survey1Results">
+          <Key>
+            <PropertyRef Name="Medium" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Medium" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Classification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Survey2">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Year" />
+          </Key>
+          <Property Name="Classification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Survey2Results">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Year" />
+          </Key>
+          <Property Name="Classification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Century" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Survey3">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Genre" />
+          </Key>
+          <Property Name="Classification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Century" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Genre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Survey3Results">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Genre" />
+          </Key>
+          <Property Name="Classification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Century" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Genre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ArtInfoEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Survey1" EntityType="Self.Survey1" />
+          <EntitySet Name="Survey1Results" EntityType="Self.Survey1Results" />
+          <EntitySet Name="Survey2" EntityType="Self.Survey2" />
+          <EntitySet Name="Survey2Results" EntityType="Self.Survey2Results" />
+          <EntitySet Name="Survey3" EntityType="Self.Survey3" />
+          <EntitySet Name="Survey3Results" EntityType="Self.Survey3Results" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SurveySQLViewModelsStoreContainer" CdmEntityContainer="ArtInfoEntities2">
+          <EntitySetMapping Name="Survey1">
+            <EntityTypeMapping TypeName="SurveySQLViewModels.Survey1">
+              <MappingFragment StoreEntitySet="Survey1">
+                <ScalarProperty Name="Medium" ColumnName="Medium" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Survey1Results">
+            <EntityTypeMapping TypeName="SurveySQLViewModels.Survey1Results">
+              <MappingFragment StoreEntitySet="Survey1Results">
+                <ScalarProperty Name="Medium" ColumnName="Medium" />
+                <ScalarProperty Name="Classification" ColumnName="Classification" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Survey2">
+            <EntityTypeMapping TypeName="SurveySQLViewModels.Survey2">
+              <MappingFragment StoreEntitySet="Survey2">
+                <ScalarProperty Name="Classification" ColumnName="Classification" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Survey2Results">
+            <EntityTypeMapping TypeName="SurveySQLViewModels.Survey2Results">
+              <MappingFragment StoreEntitySet="Survey2Results">
+                <ScalarProperty Name="Classification" ColumnName="Classification" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Century" ColumnName="Century" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Survey3">
+            <EntityTypeMapping TypeName="SurveySQLViewModels.Survey3">
+              <MappingFragment StoreEntitySet="Survey3">
+                <ScalarProperty Name="Classification" ColumnName="Classification" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Century" ColumnName="Century" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Survey3Results">
+            <EntityTypeMapping TypeName="SurveySQLViewModels.Survey3Results">
+              <MappingFragment StoreEntitySet="Survey3Results">
+                <ScalarProperty Name="Classification" ColumnName="Classification" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Century" ColumnName="Century" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

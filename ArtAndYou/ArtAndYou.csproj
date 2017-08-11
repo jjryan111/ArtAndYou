@@ -152,6 +152,12 @@
     <Compile Include="Controllers\ArtInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MediumController.cs" />
+    <Compile Include="Controllers\Survey1Controller.cs" />
+    <Compile Include="Controllers\Survey1ResultsController.cs" />
+    <Compile Include="Controllers\Survey2Controller.cs" />
+    <Compile Include="Controllers\Survey2ResultsController.cs" />
+    <Compile Include="Controllers\Survey3Controller.cs" />
+    <Compile Include="Controllers\Survey3ResultsController.cs" />
     <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Controllers\UserInfoesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -178,6 +184,39 @@
     <Compile Include="Models\Medium.cs" />
     <Compile Include="Models\Queries.cs" />
     <Compile Include="Models\Survey.cs" />
+    <Compile Include="Models\Survey1.cs">
+      <DependentUpon>SurveyViewsfromSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Survey1Results.cs">
+      <DependentUpon>SurveyViewsfromSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Survey2.cs">
+      <DependentUpon>SurveyViewsfromSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Survey2Results.cs">
+      <DependentUpon>SurveyViewsfromSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Survey3.cs">
+      <DependentUpon>SurveyViewsfromSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Survey3Results.cs">
+      <DependentUpon>SurveyViewsfromSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SurveyViewsfromSQL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SurveyViewsfromSQL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SurveyViewsfromSQL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SurveyViewsfromSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SurveyViewsfromSQL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SurveyViewsfromSQL.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\UserInfo.cs">
       <DependentUpon>Users.tt</DependentUpon>
     </Compile>
@@ -208,7 +247,6 @@
     <Content Include="Content\Images\Century\Paint Cent Van Gogh StarryNight.JPG" />
     <Content Include="Content\Images\Century\Paint Cent Vlad Tepes.JPG" />
     <Content Include="Content\Images\Century\Paint CentMagritte_TheSonOfMan.jpg" />
-    <Content Include="Content\Images\Century\Photo Cent 04_Frank-Jay-Haynes-Grand-Canyon-of-the-Yellowstone-and-Falls-about-1880.jpg" />
     <Content Include="Content\Images\Century\Photo Cent Dead at Antietam.JPG" />
     <Content Include="Content\Images\Century\Photo Cent Milk Drop Coronet.JPG" />
     <Content Include="Content\Images\Century\Photo Cent.JPG" />
@@ -253,6 +291,16 @@
       <DependentUpon>ArtDB.edmx</DependentUpon>
       <LastGenOutput>ArtDB.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\SurveyViewsfromSQL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SurveyViewsfromSQL.edmx</DependentUpon>
+      <LastGenOutput>SurveyViewsfromSQL.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SurveyViewsfromSQL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SurveyViewsfromSQL.edmx</DependentUpon>
+      <LastGenOutput>SurveyViewsfromSQL.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Users.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Users.edmx</DependentUpon>
@@ -283,10 +331,15 @@
       <DependentUpon>Users.edmx</DependentUpon>
     </Content>
     <Content Include="fonts\BLKCHCRY.TTF" />
+    <EntityDeploy Include="Models\SurveyViewsfromSQL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SurveyViewsfromSQL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SurveyViewsfromSQL.edmx.diagram">
+      <DependentUpon>SurveyViewsfromSQL.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\ArtNYou - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\PreloadImages.js" />
-    <Content Include="Scripts\slideShow.js" />
     <Content Include="Scripts\THing.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -340,10 +393,41 @@
     <Content Include="Views\Survey\Index.cshtml" />
     <Content Include="Views\Survey\SurveyQ2PaintCent.cshtml" />
     <Content Include="Views\Survey\SurveyQ3PaintCult.cshtml" />
-    <Content Include="Views\Survey\Choice1.cshtml" />
-    <Content Include="Views\Survey\SurveyQ2SculptCent.cshtml" />
-    <Content Include="Views\Survey\SurveyQ3SculptCult.cshtml" />
-    <Content Include="Views\Survey\SurveyQ2PhotoCent.cshtml" />
+    <Content Include="Views\Survey1\Create.cshtml" />
+    <Content Include="Views\Survey1\Delete.cshtml" />
+    <Content Include="Views\Survey1\Details.cshtml" />
+    <Content Include="Views\Survey1\Edit.cshtml" />
+    <Content Include="Views\Survey1\Index.cshtml" />
+    <Content Include="Views\Survey1Results\Create.cshtml" />
+    <Content Include="Views\Survey1Results\Delete.cshtml" />
+    <Content Include="Views\Survey1Results\Details.cshtml" />
+    <Content Include="Views\Survey1Results\Edit.cshtml" />
+    <Content Include="Views\Survey1Results\Index.cshtml" />
+    <Content Include="Views\Survey2Results\Create.cshtml" />
+    <Content Include="Views\Survey2Results\Delete.cshtml" />
+    <Content Include="Views\Survey2Results\Details.cshtml" />
+    <Content Include="Views\Survey2Results\Edit.cshtml" />
+    <Content Include="Views\Survey2Results\Index.cshtml" />
+    <Content Include="Views\Survey2Results1\Create.cshtml" />
+    <Content Include="Views\Survey2Results1\Delete.cshtml" />
+    <Content Include="Views\Survey2Results1\Details.cshtml" />
+    <Content Include="Views\Survey2Results1\Edit.cshtml" />
+    <Content Include="Views\Survey2Results1\Index.cshtml" />
+    <Content Include="Views\Survey2\Create.cshtml" />
+    <Content Include="Views\Survey2\Delete.cshtml" />
+    <Content Include="Views\Survey2\Details.cshtml" />
+    <Content Include="Views\Survey2\Edit.cshtml" />
+    <Content Include="Views\Survey2\Index.cshtml" />
+    <Content Include="Views\Survey3\Create.cshtml" />
+    <Content Include="Views\Survey3\Delete.cshtml" />
+    <Content Include="Views\Survey3\Details.cshtml" />
+    <Content Include="Views\Survey3\Edit.cshtml" />
+    <Content Include="Views\Survey3\Index.cshtml" />
+    <Content Include="Views\Survey3Results\Create.cshtml" />
+    <Content Include="Views\Survey3Results\Delete.cshtml" />
+    <Content Include="Views\Survey3Results\Details.cshtml" />
+    <Content Include="Views\Survey3Results\Edit.cshtml" />
+    <Content Include="Views\Survey3Results\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

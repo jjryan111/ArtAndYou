@@ -13,12 +13,15 @@ using System.Data.Sql;
 
 namespace ArtAndYou.Controllers
 {
+    
     public class HomeController : Controller
     {
+        
         private ArtInfoEntities1 db = new ArtInfoEntities1();
 
         public ActionResult CreateName20([Bind(Include = "ID,Name")] UserInfo UserInfo)
         {
+            
             if (ModelState.IsValid)
             {
                 db.UserInfoes.Add(UserInfo);
