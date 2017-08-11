@@ -36,7 +36,7 @@ namespace ArtAndYou.Controllers
         }
         public  ActionResult Choice1(Survey M)
         {
-            this.classification = M.classification;
+            //this.classification = M.classification;
             return View(M.classification);
         }
         public ActionResult SurveyQ2SculptCent()

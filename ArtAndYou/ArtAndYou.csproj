@@ -208,6 +208,7 @@
     <Content Include="Content\Images\Century\Paint Cent Van Gogh StarryNight.JPG" />
     <Content Include="Content\Images\Century\Paint Cent Vlad Tepes.JPG" />
     <Content Include="Content\Images\Century\Paint CentMagritte_TheSonOfMan.jpg" />
+    <Content Include="Content\Images\Century\Photo Cent 04_Frank-Jay-Haynes-Grand-Canyon-of-the-Yellowstone-and-Falls-about-1880.jpg" />
     <Content Include="Content\Images\Century\Photo Cent Dead at Antietam.JPG" />
     <Content Include="Content\Images\Century\Photo Cent Milk Drop Coronet.JPG" />
     <Content Include="Content\Images\Century\Photo Cent.JPG" />
@@ -339,6 +340,10 @@
     <Content Include="Views\Survey\Index.cshtml" />
     <Content Include="Views\Survey\SurveyQ2PaintCent.cshtml" />
     <Content Include="Views\Survey\SurveyQ3PaintCult.cshtml" />
+    <Content Include="Views\Survey\Choice1.cshtml" />
+    <Content Include="Views\Survey\SurveyQ2SculptCent.cshtml" />
+    <Content Include="Views\Survey\SurveyQ3SculptCult.cshtml" />
+    <Content Include="Views\Survey\SurveyQ2PhotoCent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
