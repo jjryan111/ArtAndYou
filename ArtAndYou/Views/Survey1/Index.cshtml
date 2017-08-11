@@ -16,31 +16,34 @@
         </th>
         <th></th>
     </tr>
-    <tr>
-        @foreach (var item in Model)
-        {
+    <form name="Medium" id="Choice1" action="ClassificationEdit" method="get">
 
+        <tr>
+            @foreach (var item in Model)
+            {
+
+                <td>
+                    <img src="@Url.Content(item.ImageUrl)" height="200" />
+                </td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.Medium }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.Medium }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.Medium })
+                    </td>*@
+
+            }
+        </tr>
+        <tr>
             <td>
-                <img src="@Url.Content(item.ImageUrl)" height="200" />
+                <input type="radio" name="classification" value="Paintings">
             </td>
-            @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { id=item.Medium }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.Medium }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Medium })
-                </td>*@
-
-        }
-    </tr>
-    <tr>
-        <td>
-            <input type="radio" name="classification" value="Paintings">
-        </td>
-        <td>
-            <input type="radio" name="classification" value="Sculpture">
-        </td>
-        <td>
-            <input type="radio" name="classification" value="Photographs">
-        </td>
-    </tr>
-    <input type="submit" id="ClassSubmit" value="Submit">
+            <td>
+                <input type="radio" name="classification" value="Sculpture">
+            </td>
+            <td>
+                <input type="radio" name="classification" value="Photographs">
+            </td>
+        </tr>
+        <input type="submit" id="ClassSubmit" value="Submit">
 </table>
+</form>
