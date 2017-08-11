@@ -339,7 +339,6 @@
     <Content Include="Views\Survey\Index.cshtml" />
     <Content Include="Views\Survey\SurveyQ2PaintCent.cshtml" />
     <Content Include="Views\Survey\SurveyQ3PaintCult.cshtml" />
-    <Content Include="Views\Home\SlideShow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
