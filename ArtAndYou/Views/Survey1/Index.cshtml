@@ -9,14 +9,15 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </th>
-        <th></th>
-    </tr>
-    <form name="Medium" id="Choice1" action="~/Userinfoes/ClassificationEdit" method="get">
+<form name="Medium" id="Choice1" action="~/Userinfoes/ClassificationEdit" method="get">
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th></th>
+        </tr>
 
         <tr>
             @foreach (var item in Model)
@@ -44,6 +45,6 @@
                 <input type="radio" name="classification" value="Photographs">
             </td>
         </tr>
-        <input type="submit" id="ClassSubmit" value="Submit">
-</table>
+    </table>
+    <input type="submit" id="ClassSubmit" value="Submit">
 </form>

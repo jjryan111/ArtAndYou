@@ -7,6 +7,8 @@ using ArtAndYou.Models;
 using ArtAndYou.Controllers;
 using System.Data.Entity;
 using System.Data.Sql;
+using System.Web.Mvc;
+using System.Net;
 
 namespace ArtAndYou.Controllers
 {
@@ -15,8 +17,11 @@ namespace ArtAndYou.Controllers
         public string name;
         public string medium;
         // GET: Medium
-        public ActionResult Index()
+        public ActionResult Index(Medium M)
         {
+            List <Survey1> thing = M.Details("5");
+            ViewBag.thing2 = thing[0].ToString();
+            ViewBag.Thing3 = "thing";
             return View();
         }
         public ActionResult Medium()

@@ -19,7 +19,7 @@ namespace ArtAndYou.Controllers
         
         private ArtInfoEntities1 db = new ArtInfoEntities1();
 
-        public ActionResult CreateName20([Bind(Include = "ID,Name")] UserInfo UserInfo)
+        public ActionResult CreateName21([Bind(Include = "ID,Name")] UserInfo UserInfo)
         {
             
             if (ModelState.IsValid)
