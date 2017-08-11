@@ -36,8 +36,12 @@ namespace ArtAndYou.Controllers
         }
         public  ActionResult Choice1(Survey M)
         {
-            string concat = M.ConCatChoice(M.question, M.classification, M.cent);
-            return View(concat);
+            this.classification = M.classification;
+            return View(M.classification);
+        }
+        public ActionResult SurveyQ2SculptCent()
+        {
+            return View();
         }
 
         // GET: Survey
