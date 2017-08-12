@@ -7,7 +7,6 @@ using ArtAndYou.Models;
 using ArtAndYou.Controllers;
 using System.Data.Entity;
 using System.Data.Sql;
-using System.Web.Mvc;
 using System.Net;
 
 namespace ArtAndYou.Controllers

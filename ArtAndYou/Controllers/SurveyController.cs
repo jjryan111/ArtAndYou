@@ -35,11 +35,13 @@ namespace ArtAndYou.Controllers
             }
             return View(userInfo);
         }
+
         public  ActionResult Choice1(Survey M)
         {
             //this.classification = M.classification;
             return View(M.classification);
         }
+
         public ActionResult SurveyQ2SculptCent()
         {
             return View();
@@ -50,14 +52,17 @@ namespace ArtAndYou.Controllers
         {
             return View();
         }
+
         public ActionResult SurveyQ3PaintCult()
         {
             return View();
         }
+
         public ActionResult SurveyQ3SculptCult()
         {
             return View();
         }
+
         public ActionResult SurveyQ2PaintCent()
         {
             return View();
@@ -67,6 +72,7 @@ namespace ArtAndYou.Controllers
         {
             return View();
         }
+
         public ActionResult SurveyQ3PhotoCult()
         {
             return View();

@@ -21,6 +21,13 @@ namespace ArtAndYou.Controllers
             return View(db.UserInfoes.ToList());
         }
 
+        // GET: UserInfoes - added by Christopher
+        public string Results()
+        {
+            string results = db.UserInfoes.ToString();
+            return results;
+        }
+
         // GET: UserInfoes/Details/5
         public ActionResult Details(int? id)
         {
