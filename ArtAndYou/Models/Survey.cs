@@ -20,10 +20,12 @@ namespace ArtAndYou.Models
 
         public Survey()
         {
-//            this.question = question;
-            this.cent = cent;
-            this.cult = cult;
-            this.classification = classification;
+            //            this.question = question;
+
+            //Christopher commented out the next three lines 8/12/2017 9:57 AM - don't seem to be doing anything?
+            //this.cent = cent;
+            //this.cult = cult;
+            //this.classification = classification;
         }
         public string ConCatChoice(string question, string classification, string choice)
         {
