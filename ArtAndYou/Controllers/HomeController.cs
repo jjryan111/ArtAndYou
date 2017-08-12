@@ -11,14 +11,15 @@ using Newtonsoft.Json;
 using ArtAndYou.Models;
 using System.Data;
 using System.Data.SqlClient;
+using ArtAndYou.Controllers;
 
 namespace ArtAndYou.Controllers
 {
     
     public class HomeController : Controller
     {
-        
         private ArtInfoEntities1 db = new ArtInfoEntities1();
+        private UserInfo x = new UserInfo();
 
         public ActionResult CreateName20([Bind(Include = "ID,Name")] UserInfo UserInfo)
         {

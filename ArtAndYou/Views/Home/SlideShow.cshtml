@@ -1,20 +1,4 @@
 ﻿<script src="~/Scripts/slideShow.js"></script>
-<script src="~/Scripts/PreloadImages.js"></script>
-
-@*<script>
-    preload([
-        <img src="nothing.jpg" id="4" />,
-        //'~/Content/Images/nw.jpg',
-        //'img/pear.jpg'
-    ]);
-</script>
-
-<script>
-    $(function () {
-        $('body#slideshowbody').show();
-        // or fade it in: $('body').fadeIn();
-    });
-</script>*@
 
 @{
     ViewBag.Title = "SlideShow";
@@ -32,8 +16,9 @@
     <title>Slide Show</title>
 </head>
 
-<body @*id="slideshowbody"*@>
+<body>
     <style>
+        /*set opacity to zero as images load*/
         img{
             opacity:0;
         }
@@ -47,7 +32,7 @@
         <img src="nothing.jpg" id="9" name="image" alt="" />
     </div>
     <br />
-    <button id="slideShowButton"></button> <!-- Optional button element. -->
+    <button id="slideShowButton"></button> <!-- Optional button allows user to pause on current image. -->
     <script src="slideShow.js"></script>
     <script>
         var str = "@ViewBag.ObjectID";
@@ -57,7 +42,7 @@
         document.getElementById("classification").innerHTML = res[1];
         document.getElementById("culture").innerHTML = res[2];
 
-        //remove the %20 (space for http urls) 
+        //remove the '%20' (the space code necessary for http urls) 
         var newcent = res[3].replace("%20c", " C");
         document.getElementById("century").innerHTML = newcent;
 
