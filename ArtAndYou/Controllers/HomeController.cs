@@ -18,19 +18,19 @@ namespace ArtAndYou.Controllers
     {
         
         private ArtInfoEntities1 db = new ArtInfoEntities1();
-
-        public ActionResult CreateName20([Bind(Include = "ID,Name")] UserInfo UserInfo)
-        {
+        
+        //public ActionResult CreateName20([Bind(Include = "ID,Name")] UserInfo UserInfo)
+        //{
             
-            if (ModelState.IsValid)
-            {
-                db.UserInfoes.Add(UserInfo);
-                db.SaveChanges();
-                return RedirectToAction("SurveyQ1Classification", "Survey");
-            }
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.UserInfoes.Add(UserInfo);
+        //        db.SaveChanges();
+        //        return RedirectToAction("SurveyQ1Classification", "Survey");
+        //    }
 
-            return View("Contact");
-        }
+        //    return View("Contact");
+        //}
 
         string size = "?width=300";
         string urlHeader = "http://api.harvardartmuseums.org";

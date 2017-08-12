@@ -47,16 +47,16 @@ namespace ArtAndYou.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Classification,Century,Culture")] UserInfo userInfo)
+        public ActionResult Create([Bind(Include = "ID,Name")] UserInfo userInfo)
         {
             if (ModelState.IsValid)
             {
                 db.UserInfoes.Add(userInfo);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("SurveyQ1Classification","Survey");
             }
 
-            return View(userInfo);
+            return View("Home","Index");
         }
 
         // GET: UserInfoes/Edit/5
