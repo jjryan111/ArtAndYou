@@ -213,7 +213,7 @@ namespace ArtAndYou.Controllers
         }
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Art N You.";
 
             return View();
         }
