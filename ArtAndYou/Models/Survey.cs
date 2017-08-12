@@ -12,12 +12,14 @@ namespace ArtAndYou.Models
         [Key]
         public string classification { get; set; }
         [Key]
-        public string cent { get; set; }
+        public string century { get; set; }
         [Key]
-        public string cult { get; set; }
-        [Key]
-        public string name { get; set; }
+        public string culture { get; set; }
+        //[Key]
+        //public string name { get; set; }
 
+        /*does this do anything? Commented out as test 8/12/2017 10:42 AM ---->
+         * 
         public Survey()
         {
             //            this.question = question;
@@ -31,5 +33,8 @@ namespace ArtAndYou.Models
         {
             return "Survey" + question + classification + choice;
         }
+
+        <----  does this do anything? Commented out as test 8/12/2017 10:42 AM */
     }
 }
+ 
