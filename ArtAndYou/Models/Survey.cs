@@ -10,11 +10,11 @@ namespace ArtAndYou.Models
     {
         [Required]
         [Key]
-        public string classification { get; set; }
+        public string Classification { get; set; }
         [Key]
-        public string century { get; set; }
+        public string Century { get; set; }
         [Key]
-        public string culture { get; set; }
+        public string Culture { get; set; }
         //[Key]
         //public string name { get; set; }
 

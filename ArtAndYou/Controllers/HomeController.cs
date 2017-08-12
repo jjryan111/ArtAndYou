@@ -232,12 +232,8 @@ namespace ArtAndYou.Controllers
 
         public ActionResult SlideShow(Input i)
         {
-            string classification = i.Classification;
-            string culture = i.Culture;
-            string century = i.Century;
-
             Queries q = new Queries();
-            string portfolio = q.ImageSearch(classification, culture, century);
+            string portfolio = q.ImageSearch(i.Classification, i.Culture, i.Century);
             ViewBag.ObjectID = portfolio;
             return View();
         }
