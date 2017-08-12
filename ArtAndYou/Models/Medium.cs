@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Web.Mvc;
+using System.Net;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 namespace ArtAndYou.Models
@@ -19,6 +20,7 @@ namespace ArtAndYou.Models
         [Key]
         public string category { get; set; }
 
+       
         public Medium()
         {
             this.medium = medium;
@@ -26,5 +28,22 @@ namespace ArtAndYou.Models
             this.genre = genre;
             this.category = category;
         }
+        private ArtInfoEntities2 db = new ArtInfoEntities2();
+        public List<Survey1> Details(string id)
+        {
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            Survey1 survey1 = db.Survey1.Find(id);
+            List<Survey1> thing = db.Survey1.ToList();
+       
+            if (survey1 == null)
+            {
+                return null;
+            }
+            return thing;
+        }
+
     }
 }
