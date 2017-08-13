@@ -10,18 +10,22 @@ using System.Diagnostics;
 using Newtonsoft.Json;
 using ArtAndYou.Models;
 using System.Data.Sql;
+using System.Data.SqlClient; //need for reading SQL database
+using System.Text; //need for code reading SQL database
 
 namespace ArtAndYou.Controllers
 {
     
     public class HomeController : Controller
     {
-        
-        private ArtInfoEntities1 db = new ArtInfoEntities1();
-        
+        private ArtInfoEntities db = new ArtInfoEntities();
+        private ArtInfoEntities1 db1 = new ArtInfoEntities1();
+        private ArtInfoEntities2 db2 = new ArtInfoEntities2();
+        private ArtInfoEntities3 db3 = new ArtInfoEntities3();
+
         //public ActionResult CreateName20([Bind(Include = "ID,Name")] UserInfo UserInfo)
         //{
-            
+
         //    if (ModelState.IsValid)
         //    {
         //        db.UserInfoes.Add(UserInfo);
@@ -34,22 +38,88 @@ namespace ArtAndYou.Controllers
 
         string size = "?width=300";
         string urlHeader = "http://api.harvardartmuseums.org";
-
         string APIkey = "&apikey=db4038a0-79da-11e7-aa25-e32c9c02c857";
 
-        public ActionResult Portfolio(Input i)
+        public ActionResult Portfolio(/*Input i*/)
         {
+            string name = "";
+            string classification = "";
+            string culture = "";
+            string century = "";
+
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "artserverfinal.database.windows.net";
+            builder.UserID = "finalproject";
+            builder.Password = "Teamproject1";
+            builder.InitialCatalog = "ArtInfo";
+
+            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            {
+                connection.Open();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Culture], [Century] ");
+                sb.Append("FROM [dbo].[HelgesonTestTable] ");
+                sb.Append("ORDER BY [ID] DESC");
+                String sql = sb.ToString();
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            name = reader.GetString(1);
+                            classification = reader.GetString(2);
+                            culture = reader.GetString(3);
+                            century = reader.GetString(4);
+                        }
+                    }
+                }
+            }
+
             //string classification = "Photographs";
             //string culture = "American";
             //string century = "20th%20century";
 
-            string classification = i.Classification;
-            string culture = i.Culture;
-            string century = i.Century;
+            //string classification = i.Classification;
+            //string culture = i.Culture;
+            //string century = i.Century;
 
             Queries q = new Queries();
             string portfolio = q.ImageSearch(classification, culture, century);
             ViewBag.ObjectID = portfolio;
+            ViewBag.Name = name;
+            return View();
+        }
+
+        public ActionResult Portfolio2()
+        {
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "artserverfinal.database.windows.net";
+            builder.UserID = "finalproject";
+            builder.Password = "Teamproject1";
+            builder.InitialCatalog = "ArtInfo";
+
+            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            {
+                connection.Open();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Culture], [Century] ");
+                sb.Append("FROM [dbo].[HelgesonTestTable] ");
+                sb.Append("ORDER BY [ID] DESC");
+                String sql = sb.ToString();
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ViewBag.thisGuy = reader.GetString(1) + "," + reader.GetString(2) + "," + reader.GetString(3) + "," + reader.GetString(4);
+                        }
+                    }
+                }
+            }
             return View();
         }
 
@@ -220,7 +290,7 @@ namespace ArtAndYou.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "We Love Bringing Art In You";
+            ViewBag.Message = "We Love Bringing Art To You";
 
             return View();
         }
