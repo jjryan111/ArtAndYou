@@ -10,9 +10,11 @@ using System.Data.Sql;
 using System.Net;
 
 namespace ArtAndYou.Controllers
+
 {
     public class MediumController : Controller
     {
+        private ArtInfoEntities1 db = new ArtInfoEntities1();
         public string name;
         public string medium;
         // GET: Medium
@@ -45,12 +47,14 @@ namespace ArtAndYou.Controllers
             ViewBag.Name = this.name;
             return View();
         }
-        public ActionResult Edit([Bind(Include = "ID,Name,Classification,Century,Culture")] UserInfo userInfo)
+        public ActionResult ClassEdit([Bind(Include = "ID,Classification")] UserInfo userInfo,Survey1 clsurv)
         {
             if (ModelState.IsValid)
             {
-                //db.Entry(userInfo).State = EntityState.Modified;
-                //db.SaveChanges();
+                db.Entry(userInfo).State = EntityState.Modified;
+                
+                userInfo.Classification = clsurv.Medium;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(userInfo);
