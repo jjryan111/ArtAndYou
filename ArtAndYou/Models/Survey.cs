@@ -17,6 +17,10 @@ namespace ArtAndYou.Models
         public string Culture { get; set; }
         //[Key]
         //public string name { get; set; }
+        
+        
+        // JJ: THis was stuff I was playing with and hadn't called yet
+
 
         /*does this do anything? Commented out as test 8/12/2017 10:42 AM ---->
          * 
