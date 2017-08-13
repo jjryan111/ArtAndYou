@@ -4,7 +4,7 @@
 }
 
 <h2>SurveyQ1</h2>
-<form name="Medium" onsubmit="return validateForm()" id="Choice1" action="Choice1" method="get">
+<form name="Medium" onsubmit="return validateForm()" id="Choice1" action="@Url.Action("ClassEdit", "Medium")" method="get">
     <table>
         <tr>
             <td>
@@ -19,13 +19,13 @@
         </tr>
         <tr>
             <td style="text-align:center">
-                <input type="radio" name="classification" value="SurveyQ2PaintCent">
+                <input type="radio" name="Classification" value="Painting">
             </td>
             <td style="text-align:center">
-                <input type="radio" name="classification" value="SurveyQ2SculptCent">
+                <input type="radio" name="Classification" value="Sculpture">
             </td>
             <td style="text-align:center">
-                <input type="radio" name="classification" value="SurveyQ2PhotoCent">
+                <input type="radio" name="Classification" value="SurveyQ2PhotoCent">
             </td>
         </tr>
     </table>

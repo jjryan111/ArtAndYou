@@ -60,7 +60,7 @@ namespace ArtAndYou.Controllers
             {
                 db.UserInfoes.Add(userInfo);
                 db.SaveChanges();
-                return RedirectToAction("SurveyQ1Classification","Survey");
+                return RedirectToAction("Index","Survey1");
             }
 
             return View("Home","Index");
