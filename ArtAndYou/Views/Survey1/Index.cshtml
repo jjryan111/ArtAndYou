@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<form name="Medium" id="Choice1" action="~/Userinfoes/ClassificationEdit" method="get">
+<form name="Medium" id="Choice1" action="~/survey2/index" method="get">
 
     <table class="table">
         <tr>
@@ -22,29 +22,15 @@
         <tr>
             @foreach (var item in Model)
             {
-
                 <td>
+                    <input type="radio" name="classification" value="@item.Medium">
                     <img src="@Url.Content(item.ImageUrl)" height="200" />
                 </td>
-                @*<td>
-                        @Html.ActionLink("Edit", "Edit", new { id=item.Medium }) |
-                        @Html.ActionLink("Details", "Details", new { id=item.Medium }) |
-                        @Html.ActionLink("Delete", "Delete", new { id=item.Medium })
-                    </td>*@
+                
 
             }
         </tr>
-        <tr>
-            <td>
-                <input type="radio" name="classification" value="Paintings">
-            </td>
-            <td>
-                <input type="radio" name="classification" value="Sculpture">
-            </td>
-            <td>
-                <input type="radio" name="classification" value="Photographs">
-            </td>
-        </tr>
+
     </table>
     <input type="submit" id="ClassSubmit" value="Submit">
 </form>

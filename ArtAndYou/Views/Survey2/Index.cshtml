@@ -12,38 +12,15 @@
 <form name="Medium" id="Choice1" action="Index" method="get">
 
     <table class="table">
-        @*<tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Classification)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th></th>
-        </tr>
-        <tr>*@
+        <tr>
             @foreach (var item in Model)
             {
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.Classification)
-                </td>*@
                 <td>
+                    <input type="radio" name="Century" value=@item.Year>
                     <img src="@Url.Content(item.ImageUrl)" height="100" width="100" />
                 </td>
-                @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>*@
-
-
-        
-        <tr>
-            <td>
-                <input type="radio" name="Century" value=item>
-            </td>
-        </tr>
             }
+        </tr>
     </table>
     <input type="submit" id="ClassSubmit" value="Submit">
 </form>
