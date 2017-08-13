@@ -77,5 +77,11 @@ namespace ArtAndYou.Models
         public string Century { get; set; }
     }
 
-    
+    public class GetName
+    {
+        [Required]
+        public string Name { get; set; }
+    }
+
+
 }
