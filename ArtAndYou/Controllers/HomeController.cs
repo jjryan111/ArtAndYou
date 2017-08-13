@@ -10,18 +10,21 @@ using System.Diagnostics;
 using Newtonsoft.Json;
 using ArtAndYou.Models;
 using System.Data.Sql;
+using System.Data.SqlClient;
 
 namespace ArtAndYou.Controllers
 {
     
     public class HomeController : Controller
     {
-        
-        private ArtInfoEntities1 db = new ArtInfoEntities1();
-        
+        private ArtInfoEntities db = new ArtInfoEntities();
+        private ArtInfoEntities1 db1 = new ArtInfoEntities1();
+        private ArtInfoEntities2 db2 = new ArtInfoEntities2();
+        private ArtInfoEntities3 db3 = new ArtInfoEntities3();
+
         //public ActionResult CreateName20([Bind(Include = "ID,Name")] UserInfo UserInfo)
         //{
-            
+
         //    if (ModelState.IsValid)
         //    {
         //        db.UserInfoes.Add(UserInfo);
