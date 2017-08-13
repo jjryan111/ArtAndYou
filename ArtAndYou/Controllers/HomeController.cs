@@ -155,7 +155,30 @@ namespace ArtAndYou.Controllers
             return View();
         }
 
-        public ActionResult TestSurvey()
+        public ActionResult TestSurvey(GetName n)
+        {
+            string name = n.Name;
+
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "artserverfinal.database.windows.net";
+            builder.UserID = "finalproject";
+            builder.Password = "Teamproject1";
+            builder.InitialCatalog = "ArtInfo";
+
+            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+                using (SqlCommand command = connection.CreateCommand())
+            {
+                command.CommandText = "UPDATE [dbo].[HelgesonTestTable] SET Name = '" + n.Name + "' WHERE (ID = 3)";
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();  
+            }
+            ViewBag.Name = n.Name;
+            return View();
+        }
+
+        public ActionResult GetName()
         {
             return View();
         }
