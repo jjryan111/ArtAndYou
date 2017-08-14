@@ -62,7 +62,7 @@ h2 {
 body#slideshowbody {
     display: none;
 }
-#HomePage{
-    margin-left:auto !important;
-    margin-right:auto !important;
+#HomePage {
+    margin-left: auto !important;
+    background-image: url('Images/guh.jpg');
 }

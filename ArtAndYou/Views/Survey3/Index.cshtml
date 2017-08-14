@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<form name="Medium" id="Choice1" action="~/Userinfoes/ClassificationEdit" method="get">
+<form name="Medium" id="Choice1" action="../home/show4survey" method="get">
 
     <table class="table">
         @*<tr>
@@ -34,7 +34,7 @@
                     @Html.DisplayFor(modelItem => item.Century)
                 </td>*@
                 <td>
-                    <input type="radio" name="Century" value=@item.Year>
+                    <input type="radio" name="Culture" value=@item.Genre>
                     <img src="@Url.Content(item.ImageUrl)" height="100" width="100" />
                 </td>
                 @*<td>
