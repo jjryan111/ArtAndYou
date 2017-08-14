@@ -34,6 +34,7 @@
                     @Html.DisplayFor(modelItem => item.Century)
                 </td>*@
                 <td>
+                    <input type="radio" name="Century" value=@item.Year>
                     <img src="@Url.Content(item.ImageUrl)" height="100" width="100" />
                 </td>
                 @*<td>
@@ -45,7 +46,7 @@
             }
         </tr>
 
-        <tr>
+        @*<tr>
             <td>
                 <input type="radio" name="Genre" value="European">
             </td>
@@ -55,7 +56,7 @@
             <td>
                 <input type="radio" name="Genre" value="Asian">
             </td>
-        </tr>
+        </tr>*@
     </table>
     <input type="submit" id="ClassSubmit" value="Submit">
 </form>
