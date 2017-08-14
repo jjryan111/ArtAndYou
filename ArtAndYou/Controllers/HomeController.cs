@@ -164,18 +164,43 @@ namespace ArtAndYou.Controllers
             builder.UserID = "finalproject";
             builder.Password = "Teamproject1";
             builder.InitialCatalog = "ArtInfo";
-
+            //--------------
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
-                using (SqlCommand command = connection.CreateCommand())
             {
-                command.CommandText = "UPDATE [dbo].[HelgesonTestTable] SET Name = '" + n.Name + "' WHERE (ID = 3)";
+                int currentID = 0;
 
                 connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();  
+                StringBuilder sb = new StringBuilder();
+                sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Culture], [Century] ");
+                sb.Append("FROM [dbo].[HelgesonTestTable] ");
+                sb.Append("ORDER BY [ID] DESC");
+                String sql = sb.ToString();
+
+                //using (SqlCommand read = new SqlCommand(sql, connection))
+                //{
+                //    using (SqlDataReader reader = read.ExecuteReader())
+                //    {
+                //        while (reader.Read())
+                //        {
+                //            currentID = int.Parse(reader.GetString(0));
+                //        }
+                //    }
+                //}
+                //connection.Close();
+                //}
+                //---------------------
+                //using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+                using (SqlCommand update = connection.CreateCommand())
+                {
+                    update.CommandText = "UPDATE [dbo].[HelgesonTestTable] SET Name = '" + n.Name + "' WHERE (ID = " + currentID + ")";
+
+                    //connection.Open();
+                    update.ExecuteNonQuery();
+                    connection.Close();
+                }
+                ViewBag.Name = n.Name;
+                return View();
             }
-            ViewBag.Name = n.Name;
-            return View();
         }
 
         public ActionResult GetName()
