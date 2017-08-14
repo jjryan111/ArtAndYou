@@ -326,6 +326,34 @@ namespace ArtAndYou.Controllers
             return View();
         }
 
+        public ActionResult CultureInfo()
+        {
+            string param = "/culture?sort=objectcount&sortorder=desc&size=100";
+
+            HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org" + param + APIkey);
+            request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            StreamReader rd = new StreamReader(response.GetResponseStream());
+            string ApiText = rd.ReadToEnd();
+            JObject o = JObject.Parse(ApiText);
+
+            string culture = "";
+            int i = 0;
+            for (i = 0; i < 100; i++)
+            {
+                try
+                {
+                    culture += "ID: " + o["records"][i]["culture"] + " Name: " + o["records"][i]["name"] + " Qty: " + o["records"][i]["objectcount"] + ",";
+                }
+                catch (Exception)
+                {
+                    culture += "";
+                }
+            }
+            ViewBag.Cultures = culture;
+            return View();
+        }
+
         public ActionResult CenturyInfo()
         {
             string param = "/century?sort=objectcount&sortorder=desc&size=100";

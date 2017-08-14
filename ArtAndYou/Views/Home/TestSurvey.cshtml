@@ -5,11 +5,13 @@
 <html>
 <head>
     <script type="text/javascript">
- window.onload = function() {
-    document.getElementById('ifYes').style.display = 'none';
-    document.getElementById('ifNo').style.display = 'none';
-}
+        window.onload = function ()
+        {
+            document.getElementById('ifYes').style.display = 'none';
+            document.getElementById('ifNo').style.display = 'none';
+        }
 function mediumCheck() {
+        document.getElementById('Class').style.display = 'none';
     if (document.getElementById('MediumPaint').checked) {
         document.getElementById('CenturyPaint').style.display = 'block';
         document.getElementById('CenturySculpt').style.display = 'none';
@@ -68,44 +70,58 @@ function centuryCheck() {
 </head>
 <body>
     <form name="RadioTest" id="" action="AfterTestSurvey" method="get">
-        Select Medium:<br /><br />
-            <input type="radio" onclick="javascript:mediumCheck();" name="Classification" id="MediumPaint" value="Painting" img src="/Content/Images/Main/Paint Main Dali Persistence.JPG" height="250px" />Painting
-            <input type="radio" onclick="javascript:mediumCheck();" name="Classification" id="MediumSculpt" value="Sculpture" img src="/Content/Images/Main/Sculpt Main figma-the-table-museum-venus-de-milo-416511.1.jpg" height="250px"/>
-            <input type="radio" onclick="javascript:mediumCheck();" name="Classification" id="MediumPhoto" value="Photographs" img src="/Content/Images/Main/Photo Main Winston Churchill.JPG" height="250px"/>
-        <br>
-        <div id="CenturyPaint" style="display:none">
-            <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="21st%20century" id="21Pa" />21st Century Paint
-            <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="20th%20century" id="20" />20th Century Paint
-            <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="19th%20century" id="19" />19th Century Paint
-            <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="18th%20century" id="18" />18th Century Paint
-        </div>
-        <div id="CenturySculpt" style="display:none">
-            <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="21st%20century" id="21Sc" />21st Century Sculpture
-            <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="20th%20century" id="20" />20th Century Sculpture
-            <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="19th%20century" id="19" />19th Century Sculpture
-            <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="18th%20century" id="18" />18th Century Sculpture
-        </div>
-        <div id="CenturyPhoto" style="display:none">
-            <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="21st%20century" id="21Ph" />21st Century Photography
-            <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="20th%20century" id="20" />20th Century Photography
-            <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="19th%20century" id="19" />19th Century Photography
-            <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="18th%20century" id="18" />18th Century Photography
-        </div>
-        <div id="21" style="display:none">
-            <input type="radio" onclick="" name="cultpaint" value="German|French|Italian|British" id="20" />European
-            <input type="radio" onclick="" name="cultpaint" value="American" id="19" />American
-            <input type="radio" onclick="" name="cultpaint" value="Japanese|Chinese" id="18" />Asian
-        </div>
-        <div id="redhat1" style="display:none">
-            Red Hat 6.0<input type="radio" name="redhat" value="2008" id="redhat6.0" />
-            Red Hat 6.1<input type="radio" name="redhat" value="2012" id="redhat6.1" />
-        </div>
-        <div id="aix1" style="display:none">
-            aix 6.0<input type="radio" name="aix" value="2008" id="aix6.0" />
-            aix 6.1<input type="radio" name="aix" value="2012" id="aix6.1" />
-        </div>
-        <input type="submit" id="" value="Submit">
+            <div id="Class" style="display:block">
+                Select Medium:<br /><br />
+                <input type="radio" onclick="javascript:mediumCheck();" name="Classification" id="MediumPaint" value="Painting" />
+                <img src="/Content/Images/Main/Paint Main Dali Persistence.JPG" height="250px" />
+                <input type="radio" onclick="javascript:mediumCheck();" name="Classification" id="MediumSculpt" value="Sculpture" />
+                <img src="/Content/Images/Main/Sculpt Main figma-the-table-museum-venus-de-milo-416511.1.jpg" height="250px" />
+                <input type="radio" onclick="javascript:mediumCheck();" name="Classification" id="MediumPhoto" value="Photographs" />
+                <img src="/Content/Images/Main/Photo Main Winston Churchill.JPG" height="250px" />
+            </div>
+            <br>
+            <div id="CenturyPaint" style="display:none">
+                <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="21st%20century" id="21Pa" />21st Century
+
+                <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="20th%20century" id="20" />
+                <img src="https://artimages.blob.core.windows.net/artphoto/Paint%20CentMagritte_TheSonOfMan.jpg" height="200">
+                <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="19th%20century" id="19" />
+                <img src="https://artimages.blob.core.windows.net/artphoto/Paint%20Cent%20Van%20Gogh%20StarryNight.JPG" height="200">
+                <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="18th%20century" id="18" />18th Century
+
+            </div>
+            <div id="CenturySculpt" style="display:none">
+                <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="21st%20century" id="21Sc" />
+                <img src="https://artimages.blob.core.windows.net/artphoto/Sculpt%20Cent%20Guy%20Laramee.JPG" height="200">
+                <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="20th%20century" id="20" />
+                <img src="https://artimages.blob.core.windows.net/artphoto/Sculpt%20Cent%20Sylvia%20Shaw%20Savannah%20Bird%20Girl.jpg" height="200">
+                <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="19th%20century" id="19" />
+                <img src="https://artimages.blob.core.windows.net/artphoto/Sculpt%20Cent%20Statue%20of%20Liberty.jpg" height="200">
+                <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="18th%20century" id="18" />
+                <img src="https://artimages.blob.core.windows.net/artphoto/Sculpt%20Cent%20Falconet%20Bronze%20Horseman.jpg" height="200">
+            </div>
+            <div id="CenturyPhoto" style="display:none">
+                <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="21st%20century" id="21Ph" />21st Century Photography
+                <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="20th%20century" id="20" />20th Century Photography
+                <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="19th%20century" id="19" />19th Century Photography
+                <input type="radio" onclick="javascript:centuryCheck();" name="Century" value="18th%20century" id="18" />18th Century Photography
+            </div>
+            <div id="21" style="display:none">
+                <input type="radio" onclick="" name="cultpaint" value="German|French|Italian|British" id="20" />European
+                <input type="radio" onclick="" name="cultpaint" value="American" id="19" />American
+                <input type="radio" onclick="" name="cultpaint" value="Japanese|Chinese" id="18" />Asian
+            </div>
+            <div id="redhat1" style="display:none">
+                Red Hat 6.0<input type="radio" name="redhat" value="2008" id="redhat6.0" />
+                Red Hat 6.1<input type="radio" name="redhat" value="2012" id="redhat6.1" />
+            </div>
+            <div id="aix1" style="display:none">
+                aix 6.0<input type="radio" name="aix" value="2008" id="aix6.0" />
+                aix 6.1<input type="radio" name="aix" value="2012" id="aix6.1" />
+            </div>
+            <button type="submit" value="Submit">Submit</button>
+            <button type="button" onclick="document.getElementById('Class').Checked = false;window.location.reload();reset">Reset</button>
         </form>
-</body>
-</html>***
+    </body>
+</html>
 
