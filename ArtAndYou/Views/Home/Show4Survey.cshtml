@@ -40,9 +40,10 @@
         var str = "@ViewBag.ObjectID";
         var res = str.split(",");
 
-        document.getElementById("totalrecords").innerHTML = res[0];
-        document.getElementById("classification").innerHTML = res[1];
-        document.getElementById("culture").innerHTML = res[2];
+        //document.getElementById("totalrecords").innerHTML = res[0];
+        //document.getElementById("classification").innerHTML = res[1];
+        //document.getElementById("culture").innerHTML = res[2];
+        //document.getElementById("century").innerHTML = res[3];
 
         //remove the '%20' (the space code necessary for http urls)
         var newclass = res[1].replace("%20", " ");
@@ -50,10 +51,23 @@
         var newcent2 = newcent1.replace("%20", " ");
         var newcent3 = newcent2.replace("cent", "Cent");
         var newcent4 = newcent3.replace("mill", "Mill");
+        var newculture = "";
+        if (res[2] == "German|French|Italian|British")
+        {
+            newculture = "European";
+        }
+        else if (res[2] == "Japanese|Chinese")
+        {
+            newculture = "Asian";
+        }
+        else
+        {
+            newculture = res[2];
+        }
 
         document.getElementById("totalrecords").innerHTML = res[0];
         document.getElementById("classification").innerHTML = newclass;
-        document.getElementById("culture").innerHTML = res[2];
+        document.getElementById("culture").innerHTML = newculture;
         document.getElementById("century").innerHTML = newcent4;
 
         var i = 0;
