@@ -36,7 +36,7 @@ warning 6002: The table/view 'ArtInfo.dbo.Survey2' does not have a primary key d
           </Key>
           <Property Name="Classification" Type="nvarchar" MaxLength="50" />
           <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Year" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Year" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="ImageUrl" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -48,7 +48,7 @@ warning 6002: The table/view 'ArtInfo.dbo.Survey2Results' does not have a primar
           </Key>
           <Property Name="Classification" Type="nvarchar" MaxLength="50" />
           <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Year" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Year" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="Century" Type="nvarchar" MaxLength="50" />
           <Property Name="ImageUrl" Type="nvarchar(max)" />
         </EntityType>
@@ -61,7 +61,7 @@ warning 6002: The table/view 'ArtInfo.dbo.Survey3' does not have a primary key d
           </Key>
           <Property Name="Classification" Type="nvarchar" MaxLength="50" />
           <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Century" Type="nvarchar" MaxLength="50" />
+          <Property Name="Year" Type="nchar" MaxLength="50" />
           <Property Name="Genre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ImageUrl" Type="nvarchar(max)" />
         </EntityType>
@@ -115,7 +115,7 @@ warning 6002: The table/view 'ArtInfo.dbo.Survey3Results' does not have a primar
             <DefiningQuery>SELECT 
     [Survey3].[Classification] AS [Classification], 
     [Survey3].[ID] AS [ID], 
-    [Survey3].[Century] AS [Century], 
+    [Survey3].[Year] AS [Year], 
     [Survey3].[Genre] AS [Genre], 
     [Survey3].[ImageUrl] AS [ImageUrl]
     FROM [dbo].[Survey3] AS [Survey3]</DefiningQuery>
@@ -159,7 +159,7 @@ warning 6002: The table/view 'ArtInfo.dbo.Survey3Results' does not have a primar
           </Key>
           <Property Name="Classification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Year" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Year" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Survey2Results">
@@ -169,7 +169,7 @@ warning 6002: The table/view 'ArtInfo.dbo.Survey3Results' does not have a primar
           </Key>
           <Property Name="Classification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Year" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Year" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Century" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -180,9 +180,9 @@ warning 6002: The table/view 'ArtInfo.dbo.Survey3Results' does not have a primar
           </Key>
           <Property Name="Classification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Century" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Genre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Survey3Results">
           <Key>
@@ -252,9 +252,9 @@ warning 6002: The table/view 'ArtInfo.dbo.Survey3Results' does not have a primar
           <EntitySetMapping Name="Survey3">
             <EntityTypeMapping TypeName="SurveySQLViewModels.Survey3">
               <MappingFragment StoreEntitySet="Survey3">
+                <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="Classification" ColumnName="Classification" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Century" ColumnName="Century" />
                 <ScalarProperty Name="Genre" ColumnName="Genre" />
                 <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
               </MappingFragment>

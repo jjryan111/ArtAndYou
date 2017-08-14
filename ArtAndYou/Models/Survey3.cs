@@ -16,8 +16,8 @@ namespace ArtAndYou.Models
     {
         public string Classification { get; set; }
         public int ID { get; set; }
-        public string Century { get; set; }
         public string Genre { get; set; }
         public string ImageUrl { get; set; }
+        public string Year { get; set; }
     }
 }
