@@ -48,7 +48,7 @@ namespace ArtAndYou.Controllers
                 connection.Open();
                 StringBuilder sb = new StringBuilder();
                 sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Century], [Culture] ");
-                sb.Append("FROM [dbo].[NewTestTable] ");
+                sb.Append("FROM [dbo].[UserInfo] ");
                 sb.Append("ORDER BY [ID] DESC");
                 String sql = sb.ToString();
 
