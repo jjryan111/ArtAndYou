@@ -63,7 +63,7 @@ namespace ArtAndYou.Controllers
                 return RedirectToAction("Index","Survey1");
             }
 
-            return View("Home","Index");
+            return View("Index", "Survey1");
         }
 
         // GET: UserInfoes/Edit/5

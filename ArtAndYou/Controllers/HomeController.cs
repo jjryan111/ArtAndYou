@@ -47,8 +47,8 @@ namespace ArtAndYou.Controllers
             {
                 connection.Open();
                 StringBuilder sb = new StringBuilder();
-                sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Culture], [Century] ");
-                sb.Append("FROM [dbo].[HelgesonTestTable] ");
+                sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Century], [Culture] ");
+                sb.Append("FROM [dbo].[NewTestTable] ");
                 sb.Append("ORDER BY [ID] DESC");
                 String sql = sb.ToString();
 
@@ -60,8 +60,10 @@ namespace ArtAndYou.Controllers
                         {
                             name = reader.GetString(1);
                             classification = reader.GetString(2);
-                            culture = reader.GetString(3);
-                            century = reader.GetString(4);
+                            //flip the next two b/c Helgeson and UserInfo have them reversed.
+                            century = reader.GetString(3);
+                            culture = reader.GetString(4);
+                            
                         }
                     }
                 }
@@ -90,8 +92,8 @@ namespace ArtAndYou.Controllers
             {
                 connection.Open();
                 StringBuilder sb = new StringBuilder();
-                sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Culture], [Century] ");
-                sb.Append("FROM [dbo].[HelgesonTestTable] ");
+                sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Century], [Culture] ");
+                sb.Append("FROM [dbo].[NewTestTable] ");
                 sb.Append("ORDER BY [ID] DESC");
                 String sql = sb.ToString();
 
@@ -103,8 +105,9 @@ namespace ArtAndYou.Controllers
                         {
                             name = reader.GetString(1);
                             classification = reader.GetString(2);
-                            culture = reader.GetString(3);
-                            century = reader.GetString(4);
+                            century = reader.GetString(3);
+                            culture = reader.GetString(4);
+                            
                         }
                     }
                 }
@@ -155,6 +158,49 @@ namespace ArtAndYou.Controllers
             return View();
         }
 
+        public ActionResult AfterTestSurvey(Input i)
+        {
+            int currentID = 0;
+
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "artserverfinal.database.windows.net";
+            builder.UserID = "finalproject";
+            builder.Password = "Teamproject1";
+            builder.InitialCatalog = "ArtInfo";
+            //--------------
+            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            {
+                connection.Open();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("SELECT TOP 1 [ID]");
+                sb.Append("FROM [dbo].[NewTestTable] ");
+                sb.Append("ORDER BY [ID] DESC");
+                String sql = sb.ToString();
+
+                using (SqlCommand read = new SqlCommand(sql, connection))
+                {
+                    using (SqlDataReader reader = read.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            //currentID = int.Parse(reader.GetString(0));
+                            currentID = reader.GetInt32(0);
+                        }
+                    }
+                }
+                connection.Close();
+            }
+                using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+                using (SqlCommand update = connection.CreateCommand())
+                    {
+                update.CommandText = "UPDATE [dbo].[NewTestTable] SET [Classification] = '" + i.Classification + "', [Century] = '" + i.Century + "' WHERE [ID] = '" + currentID + "';";
+                        connection.Open();
+                        update.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                return View();
+            }
+
         public ActionResult TestSurvey(GetName n)
         {
             string name = n.Name;
@@ -170,11 +216,11 @@ namespace ArtAndYou.Controllers
                 int currentID = 0;
 
                 connection.Open();
-                StringBuilder sb = new StringBuilder();
-                sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Culture], [Century] ");
-                sb.Append("FROM [dbo].[HelgesonTestTable] ");
-                sb.Append("ORDER BY [ID] DESC");
-                String sql = sb.ToString();
+                //StringBuilder sb = new StringBuilder();
+                //sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Culture], [Century] ");
+                //sb.Append("FROM [dbo].[NewTestTable] ");
+                //sb.Append("ORDER BY [ID] DESC");
+                //String sql = sb.ToString();
 
                 //using (SqlCommand read = new SqlCommand(sql, connection))
                 //{
@@ -192,8 +238,7 @@ namespace ArtAndYou.Controllers
                 //using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
                 using (SqlCommand update = connection.CreateCommand())
                 {
-                    update.CommandText = "UPDATE [dbo].[HelgesonTestTable] SET Name = '" + n.Name + "' WHERE (ID = " + currentID + ")";
-
+                    update.CommandText = "INSERT INTO [dbo].[NewTestTable] ([Name], [Classification], [Century], [Culture]) VALUES ('" + n.Name + "', '', '', '')";
                     //connection.Open();
                     update.ExecuteNonQuery();
                     connection.Close();
