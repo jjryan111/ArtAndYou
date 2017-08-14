@@ -60,10 +60,8 @@ namespace ArtAndYou.Controllers
                         {
                             name = reader.GetString(1);
                             classification = reader.GetString(2);
-                            //flip the next two b/c Helgeson and UserInfo have them reversed.
                             century = reader.GetString(3);
                             culture = reader.GetString(4);
-                            
                         }
                     }
                 }
