@@ -9,14 +9,14 @@
 @*<p>
     @Html.ActionLink("Create New", "Create")
 </p>*@
-<form name="Medium" id="Choice2" action="@Url.Action("Show4Survey3", "Medium")" method="get">>
+<form name="Medium" id="Choice2" action="@Url.Action("Show4Survey2", "SurveyFinal")" method="get">>
 
     <table class="table">
         <tr>
             @foreach (var item in Model)
             {
                 <td>
-                    <input type="radio" name="Century" value=@item.Year>
+                    <input type="radio" name="Year" value=@item.Year>
                     <img src="@Url.Content(item.ImageUrl)" height="100" width="100" />
                 </td>
             }
