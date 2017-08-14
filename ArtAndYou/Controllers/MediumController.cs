@@ -85,7 +85,7 @@ namespace ArtAndYou.Controllers
             ViewBag.Name = n.Medium;
             return View("../Survey2/Index");
         }
-        public ActionResult TestSurvey2(Survey1 n)
+        public ActionResult TestSurvey2(Survey2 n)
         {
 
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
@@ -103,7 +103,7 @@ namespace ArtAndYou.Controllers
                 command.ExecuteNonQuery();
                 connection.Close();
             }
-            ViewBag.Name = n.Year;
+            //ViewBag.Name = n.Year;
             return View();
         }
         public ActionResult Show4Survey1(Survey1 n)
@@ -154,7 +154,7 @@ namespace ArtAndYou.Controllers
                 command.ExecuteNonQuery();
                 connection.Close();
             }
-            ViewBag.Name = n.Year;
+            //ViewBag.Name = n.Year;
             return RedirectToAction("Index", "Survey2");
 
             //return View("../Survey2/Index");

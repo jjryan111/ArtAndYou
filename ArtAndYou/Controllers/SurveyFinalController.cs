@@ -54,7 +54,7 @@ namespace ArtAndYou.Controllers
                 command.ExecuteNonQuery();
                 connection.Close();
             }
-            ViewBag.Name = n.Year;
+            //ViewBag.Name = n.Year;
             return RedirectToAction("Index", "Survey2");
         }
         public ActionResult Show4Survey2(Survey2 n)
