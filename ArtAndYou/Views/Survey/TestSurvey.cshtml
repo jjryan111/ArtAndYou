@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+@ViewBag.Name
+
+<html>
+<head>
+    <script type="text/javascript">
+ window.onload = function() {
+    document.getElementById('ifYes').style.display = 'none';
+    document.getElementById('ifNo').style.display = 'none';
+}
+function mediumCheck() {
+    if (document.getElementById('MediumPaint').checked) {
+        document.getElementById('CenturyPaint').style.display = 'block';
+        document.getElementById('CenturySculpt').style.display = 'none';
+        document.getElementById('CenturyPhoto').style.display = 'none';
+    }
+    else if(document.getElementById('MediumSculpt').checked) {
+        document.getElementById('CenturyPaint').style.display = 'none';
+        document.getElementById('CenturySculpt').style.display = 'block';
+        document.getElementById('CenturyPhoto').style.display = 'none';
+    }
+    else if (document.getElementById('MediumPhoto').checked) {
+        document.getElementById('CenturyPaint').style.display = 'none';
+        document.getElementById('CenturySculpt').style.display = 'none';
+        document.getElementById('CenturyPhoto').style.display = 'block';
+    }
+}
+function centuryCheck() {
+    if ((document.getElementById('21Pa').checked) ||
+        (document.getElementById('21Sc').checked) ||
+        (document.getElementById('21Ph').checked))
+    {
+        document.getElementById('21').style.display = 'block';
+        document.getElementById('20').style.display = 'none';
+        document.getElementById('19').style.display = 'none';
+        document.getElementById('18').style.display = 'none';
+    }
+    if ((document.getElementById('20Pa').checked) ||
+        (document.getElementById('20Sc').checked) ||
+        (document.getElementById('20Ph').checked))
+    {
+        document.getElementById('21').style.display = 'none';
+        document.getElementById('20').style.display = 'block';
+        document.getElementById('19').style.display = 'none';
+        document.getElementById('18').style.display = 'none';
+    }
+    if ((document.getElementById('19Pa').checked) ||
+        (document.getElementById('19Sc').checked) ||
+        (document.getElementById('19Ph').checked))
+    {
+        document.getElementById('21').style.display = 'none';
+        document.getElementById('20').style.display = 'none';
+        document.getElementById('19').style.display = 'block';
+        document.getElementById('18').style.display = 'none';
+    }
+    if ((document.getElementById('18Pa').checked) ||
+        (document.getElementById('18Sc').checked) ||
+        (document.getElementById('18Ph').checked))
+    {
+        document.getElementById('21').style.display = 'none';
+        document.getElementById('20').style.display = 'none';
+        document.getElementById('19').style.display = 'none';
+        document.getElementById('18').style.display = 'block';
+    }
+}
+    </script>
+</head>
+<body>
+    Select Medium:<br /><br />
+        <input type="radio" onclick="javascript:mediumCheck();" name="medium" id="MediumPaint" />Painting 
+        <input type="radio" onclick="javascript:mediumCheck();" name="medium" id="MediumSculpt" />Sculpture  
+        <input type="radio" onclick="javascript:mediumCheck();" name="medium" id="MediumPhoto" />Photography
+    <br>
+    <div id="CenturyPaint" style="display:none">
+        <input type="radio" onclick="javascript:centuryCheck();" name="centpaint" value="21st%20century" id="21Pa"/>21st Century Paint 
+        <input type="radio" onclick="javascript:centuryCheck();" name="centpaint" value="20th%20century" id="20"/>20th Century Paint
+        <input type="radio" onclick="javascript:centuryCheck();" name="centpaint" value="19th%20century" id="19"/>19th Century Paint
+        <input type="radio" onclick="javascript:centuryCheck();" name="centpaint" value="18th%20century" id="18"/>18th Century Paint
+    </div>
+    <div id="CenturySculpt" style="display:none">
+        <input type="radio" onclick="javascript:centuryCheck();" name="centsculpt" value="21st%20century" id="21Sc"/>21st Century Sculpture
+        <input type="radio" onclick="javascript:centuryCheck();" name="centsculpt" value="20th%20century" id="20"/>20th Century Sculpture
+        <input type="radio" onclick="javascript:centuryCheck();" name="centsculpt" value="19th%20century" id="19"/>19th Century Sculpture
+        <input type="radio" onclick="javascript:centuryCheck();" name="centsculpt" value="18th%20century" id="18"/>18th Century Sculpture
+    </div>
+    <div id="CenturyPhoto" style="display:none">
+        <input type="radio" onclick="javascript:centuryCheck();" name="centphoto" value="21st%20century" id="21Ph"/>21st Century Photography
+        <input type="radio" onclick="javascript:centuryCheck();" name="centphoto" value="20th%20century" id="20"/>20th Century Photography
+        <input type="radio" onclick="javascript:centuryCheck();" name="centphoto" value="19th%20century" id="19"/>19th Century Photography
+        <input type="radio" onclick="javascript:centuryCheck();" name="centphoto" value="18th%20century" id="18"/>18th Century Photography
+    </div>
+    <div id="21" style="display:none">
+        <input type="radio" onclick="" name="cultpaint" value="German|French|Italian|British" id="20" />European
+        <input type="radio" onclick="" name="cultpaint" value="American" id="19" />American
+        <input type="radio" onclick="" name="cultpaint" value="Japanese|Chinese" id="18" />Asian
+    </div>
+    <div id="redhat1" style="display:none">
+        Red Hat 6.0<input type="radio" name="redhat" value="2008" id="redhat6.0" />
+        Red Hat 6.1<input type="radio" name="redhat" value="2012" id="redhat6.1" />
+    </div>
+    <div id="aix1" style="display:none">
+        aix 6.0<input type="radio" name="aix" value="2008" id="aix6.0" />
+        aix 6.1<input type="radio" name="aix" value="2012" id="aix6.1" />
+    </div>
+</body>
+</html>***
+
