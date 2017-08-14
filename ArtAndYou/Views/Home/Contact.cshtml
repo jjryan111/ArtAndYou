@@ -7,18 +7,13 @@
 <h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
 
-<address>
-    Art N You<br />
-    Grand Rapids, MI 49503<br />
-    <abbr title="Phone">Phone:</abbr>
-    800.Art.NYou
-</address>
 
-<address>
+
+@*<address>
     <strong>Web Backend:</strong>   <a href="mailto:jryan@example.com">JJ Ryan</a><br />
     <strong>API:</strong> <a href="mailto:chelgeson@example.com">Christopher Helgeson</a><br />
     <strong>Database:</strong> <a href="mailto:dwatts@example.com">Diane Watts</a>
-</address>
+</address>*@
 
 <style>
     body {
@@ -26,5 +21,65 @@
         background-position: right;
         background-repeat: repeat-y;
     }
+    .title{
+        font-family:'Times New Roman', Times, serif;
+    }
+    h3{
+        font-size:20px;
+    }
+    h2{
+        font-size:15px;
+    }
 </style>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+
+                <img src="~/Content/Images/nopreview.png" alt="Christopher" style="width:15%">
+                <div class="container">
+                    <h2>Christopher Helgeson</h2>
+                    <p class="title">API and Web Design</p>
+                    <p>CHelgeson@artnyou.com</p>
+                    <p><a href="mailto:CHelgeson@artnyou.com" class="button">Contact</a></p>
+                </div>
+            </div>
+        </div>
+        <div>
+
+        </div>
+
+        <div class="column">
+            <div class="card">
+
+                <img src="~/Content/Images/nopreview.png" alt="JJ" style="width:15%">
+                <div class="container">
+                    <h2>JJ Ryan</h2>
+                    <p class="title">Web Backend and Web Design</p>
+                    <p>jryan@artnyou.com</p>
+                    <p><a href="mailto:JRyan@artnyou.com" class="button">Contact</a></p>
+               </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="~/Content/Images/img1.JPG" alt="Diane" style="width:15%">
+                <div class="container">
+                    <h2>Diane Watts</h2>
+                    <p class="title">SQL and Web Design</p>
+                    <p>dwatts@artnyou.com</p>
+                    <p><a href="mailto:dwatts@artnyou.com" class="button">Contact</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <address>
+            Art N You<br />
+            Grand Rapids, MI 49503<br />
+            <abbr title="Phone">Phone:</abbr>
+            800.Art.NYou
+        </address>
+    </div>
 </body>

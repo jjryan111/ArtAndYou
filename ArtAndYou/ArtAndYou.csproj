@@ -278,6 +278,7 @@
     <Content Include="Content\Images\Century\Sculpt Cent Statue of Liberty.jpg" />
     <Content Include="Content\Images\Century\Sculpt Cent Sylvia Shaw Savannah Bird Girl.jpg" />
     <Content Include="Content\Images\Century\Sculpt Cent-Michelangelo%27s_Pieta_5450_cut_out_black.jpg" />
+    <Content Include="Content\Images\Helgeson.jpg" />
     <Content Include="Content\Images\collage.jpg" />
     <Content Include="Content\Images\Culture\Paint Cult Grant Wood American Gothic.JPG" />
     <Content Include="Content\Images\Culture\Paint Cult PicassoGuernica.jpg" />
@@ -293,6 +294,7 @@
     <Content Include="Content\Images\img1.JPG" />
     <Content Include="Content\Images\latepaper3.jpg" />
     <Content Include="Content\Images\louvre-portrait-de-lisa-gherardini-epouse-de-francesco-del-giocondo-dite-monna-lisa-la-gioconda-ou-la-jocon.jpg" />
+    <Content Include="Content\Images\nopreview.png" />
     <Content Include="Content\Images\Main\Paint Main Dali Persistence.JPG" />
     <Content Include="Content\Images\Main\Photo Main Winston Churchill.JPG" />
     <Content Include="Content\Images\Main\Sculpt Main figma-the-table-museum-venus-de-milo-416511.1.jpg" />
