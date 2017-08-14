@@ -9,7 +9,7 @@
 @*<p>
     @Html.ActionLink("Create New", "Create")
 </p>*@
-<form name="Medium" id="Choice1" onsubmit="return validateForm()" action="@Url.Action("ClassEdit", "Medium")" method="get">
+<form name="Medium" id="Choice1" onsubmit="return validateForm()" action="@Url.Action("Show4Survey1", "Medium")" method="get">
 
     <table class="table">
         @*<tr>
@@ -23,7 +23,7 @@
             @foreach (var item in Model)
             {
                 <td>
-                    <input type="radio" name="Classification" value="@item.Medium">
+                    <input type="radio" name="Medium" value="@item.Medium">
                     <img src="@Url.Content(item.ImageUrl)" height="200" />
                 </td>
              }
