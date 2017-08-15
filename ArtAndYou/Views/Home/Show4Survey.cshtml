@@ -45,6 +45,10 @@
         //document.getElementById("culture").innerHTML = res[2];
         //document.getElementById("century").innerHTML = res[3];
 
+        if (res[3] == "3rd%20century%20CE|2nd%20century%20CE|1st%20century%20CE|1st%20century%20BCE|2nd%20century%20BCE|3rd%20century%20BCE|4th%20century%20BCE|5th%20century%20BCE") {
+            res[3] = "Tommy Time!";
+        }
+
         //remove the '%20' (the space code necessary for http urls)
         var newclass = res[1].replace("%20", " ");
         var newcent1 = res[3].replace("%20", " ");
