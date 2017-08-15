@@ -160,7 +160,6 @@
     <Compile Include="Controllers\Survey2ResultsController.cs" />
     <Compile Include="Controllers\Survey3Controller.cs" />
     <Compile Include="Controllers\Survey3ResultsController.cs" />
-    <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Controllers\SurveyFinalController.cs" />
     <Compile Include="Controllers\UserInfoesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -468,16 +467,7 @@
     <Content Include="Views\UserInfoes\Index.cshtml" />
     <Content Include="Views\Home\TextileInfo.cshtml" />
     <Content Include="Views\Home\Query.cshtml" />
-    <Content Include="Views\Survey\SurveyQ1Classification.cshtml" />
-    <Content Include="Views\Survey\Index.cshtml" />
-    <Content Include="Views\Survey\SurveyQ2PaintCent.cshtml" />
-    <Content Include="Views\Survey\SurveyQ3PaintCult.cshtml" />
     <Content Include="Views\Home\Show4Explore.cshtml" />
-    <Content Include="Views\Survey\Choice1.cshtml" />
-    <Content Include="Views\Survey\SurveyQ2PhotoCent.cshtml" />
-    <Content Include="Views\Survey\SurveyQ2SculptCent.cshtml" />
-    <Content Include="Views\Survey\SurveyQ3SculptCult.cshtml" />
-    <Content Include="Views\Survey\SurveyQ3PhotoCult.cshtml" />
     <Content Include="Views\Survey1\Create.cshtml" />
     <Content Include="Views\Survey1\Delete.cshtml" />
     <Content Include="Views\Survey1\Details.cshtml" />
