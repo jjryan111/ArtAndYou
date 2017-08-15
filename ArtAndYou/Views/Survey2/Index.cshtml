@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Index";
+    var x = Model.ToList();
+
 }
 
 <h2>Index</h2>
@@ -13,6 +15,35 @@
 
     <table class="table">
         <tr>
+
+            @for (var item = 0; item < 3; item++)
+            {
+
+
+                <td>
+                    
+                    <input type="radio" name="Year" value="@x[item].Year.Trim()">
+
+                    <img src="@Url.Content(@x[item].ImageUrl)" height="200" />
+                </td>
+
+            }
+        </tr>
+        <tr>
+
+            @for (var item = 4; item < x.Count; item++)
+            {
+
+
+                <td>
+                    <input type="radio" name="Year" value="@x[item].Year">
+
+                    <img src="@Url.Content(@x[item].ImageUrl)" height="200" />
+                </td>
+
+            }
+        </tr>
+        @*<tr>
             @foreach (var item in Model)
             {
                 <td>
@@ -20,7 +51,7 @@
                     <img src="@Url.Content(item.ImageUrl)" height="200" />
                 </td>
             }
-        </tr>
+        </tr>*@
     </table>
     <input type="submit" id="ClassSubmit" value="Submit">
 </form>
