@@ -27,7 +27,7 @@ namespace ArtAndYou.Controllers
             Queries q = new Queries();
             string portfolio = q.ImageSearch(i.Classification, i.Culture, i.Century);
             ViewBag.ObjectID = portfolio;
-            return View();
+            return View("Show4Survey");
         }
 
         public ActionResult Show4Survey()

@@ -4,7 +4,7 @@
     ViewBag.Title = "SlideShow";
 }
 
-<h2>Welcome, @ViewBag.Name!</h2>
+<h2>Welcome @ViewBag.Name!</h2>
 
 <h2>Your choices indicate that you prefer <ins id="century"></ins> <ins id="culture"></ins> <ins id="classification"></ins>.</h2>
 
@@ -40,6 +40,7 @@
         var str = "@ViewBag.ObjectID";
         var res = str.split(",");
 
+        //FOR REFERENCE, BEFORE MODIFYING STRINGS, CODE WAS:
         //document.getElementById("totalrecords").innerHTML = res[0];
         //document.getElementById("classification").innerHTML = res[1];
         //document.getElementById("culture").innerHTML = res[2];
