@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ArtAndYou.Models.CentQuery>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    
+    <form name="Medium" id="Choice1" onsubmit="return validateForm()" action="@Url.Action("Show4Survey2", "SurveyFinal")" method="get">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+               
+                <td>
+                    <input type="radio" name="Year" value="@item.Year">
+
+                    <img src="@Url.Content(item.ImageUrl)" height="200" />
+                </td>
+                
+            </tr>
+        }
+
+</table>
+<input type="submit" id="ClassSubmit" value="Submit">
+</form>

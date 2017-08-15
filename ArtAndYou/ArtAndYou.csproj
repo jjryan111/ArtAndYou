@@ -150,6 +150,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArtInfoesController.cs" />
+    <Compile Include="Controllers\CentQueriesController.cs" />
     <Compile Include="Controllers\FINALRESULTsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MediumController.cs" />
@@ -182,6 +183,24 @@
     </Compile>
     <Compile Include="Models\ArtInfo.cs">
       <DependentUpon>ArtDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CentQuery.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CentQuery.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CentQuery.cs">
+      <DependentUpon>CentQuery.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CentQuery.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CentQuery.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CentQuery1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CentQuery.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FinalResult.Context.cs">
       <AutoGen>True</AutoGen>
@@ -316,6 +335,16 @@
       <DependentUpon>ArtDB.edmx</DependentUpon>
       <LastGenOutput>ArtDB.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\CentQuery.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CentQuery.edmx</DependentUpon>
+      <LastGenOutput>CentQuery.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CentQuery.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CentQuery.edmx</DependentUpon>
+      <LastGenOutput>CentQuery1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\FinalResult.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FinalResult.edmx</DependentUpon>
@@ -379,6 +408,13 @@
     </EntityDeploy>
     <Content Include="Models\FinalResult.edmx.diagram">
       <DependentUpon>FinalResult.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\CentQuery.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CentQuery.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CentQuery.edmx.diagram">
+      <DependentUpon>CentQuery.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\ArtNYou - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -490,6 +526,11 @@
     <Content Include="Views\Home\GetName.cshtml" />
     <Content Include="Views\Home\AfterTestSurvey.cshtml" />
     <Content Include="Views\Home\CultureInfo.cshtml" />
+    <Content Include="Views\CentQueries\Create.cshtml" />
+    <Content Include="Views\CentQueries\Delete.cshtml" />
+    <Content Include="Views\CentQueries\Details.cshtml" />
+    <Content Include="Views\CentQueries\Edit.cshtml" />
+    <Content Include="Views\CentQueries\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

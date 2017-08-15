@@ -54,10 +54,10 @@ namespace ArtAndYou.Controllers
                 command.ExecuteNonQuery();
                 connection.Close();
             }
-            ViewBag.Name = n.Year;
+            //ViewBag.Name = n.Year;
             return RedirectToAction("Index", "Survey2");
         }
-        public ActionResult Show4Survey2(Survey2 n)
+        public ActionResult Show4Survey2(CentQuery n)
         {
             int ID = 0;
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();

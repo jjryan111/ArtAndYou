@@ -6,19 +6,9 @@
 
 <h2>Index</h2>
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
 <form name="Medium" id="Choice1" onsubmit="return validateForm()" action="@Url.Action("Show4Survey1", "SurveyFinal")" method="get">
 
     <table class="table">
-        @*<tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th></th>
-        </tr>*@
-
         <tr>
             @foreach (var item in Model)
             {
