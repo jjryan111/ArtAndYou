@@ -1,63 +1,23 @@
 ﻿@model IEnumerable<ArtAndYou.Models.Survey3>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Survey Page 3";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<form name="Medium" id="Choice1" action="@Url.Action("Show4Survey3", "SurveyFinal")" method="get">
+<form name="Medium" id="Choice1" action="@Url.Action("Show4Survey3", "SurveyFinal")" method="post">
 
     <table class="table">
-        @*<tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Classification)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Century)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ImageUrl)
-                </th>
-                <th></th>
-            </tr>*@
+        
         <tr>
         @foreach (var item in Model)
             {
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.Classification)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Century)
-                </td>*@
                 <td>
                     <input type="radio" name="Genre" value=@item.Genre>
                     <img src="@Url.Content(item.ImageUrl)" height="200" />
                 </td>
-                @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>*@
-
+        
             }
         </tr>
-
-        @*<tr>
-            <td>
-                <input type="radio" name="Genre" value="European">
-            </td>
-            <td>
-                <input type="radio" name="Genre" value="American">
-            </td>
-            <td>
-                <input type="radio" name="Genre" value="Asian">
-            </td>
-        </tr>*@
-    </table>
+         </table>
     <input type="submit" id="ClassSubmit" value="Submit">
 </form>
     </table>

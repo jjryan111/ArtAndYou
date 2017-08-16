@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<ArtAndYou.Models.Survey1>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Survey Page 1";
 }
 
-<h2>Index</h2>
+<h2>Welcome to the survey!</h2>
 
-<form name="Medium" id="Choice1" onsubmit="return validateForm()" action="@Url.Action("Show4Survey1", "SurveyFinal")" method="get">
+<form name="Medium" id="Choice1" onsubmit="return validateForm()" action="@Url.Action("Show4Survey1", "SurveyFinal")" method="post">
 
     <table class="table">
         <tr>
