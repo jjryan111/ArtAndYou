@@ -66,8 +66,8 @@ namespace ArtAndYou.Controllers
                 }
                 catch (Exception e)
                 {
-                                    
-                    return ErrorView();
+                    ViewBag.Message = "You entered to many characters";
+                    return View("ErrorView");
                 }
                 
                 
@@ -77,7 +77,7 @@ namespace ArtAndYou.Controllers
         }
         public ActionResult ErrorView()
         {
-            ViewBag.Message = "You entered to many characters";
+           // ViewBag.Message = "You entered to many characters";
             return View();           
             
         }
