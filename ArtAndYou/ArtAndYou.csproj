@@ -149,6 +149,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\APIController.cs" />
     <Compile Include="Controllers\ArtInfoesController.cs" />
     <Compile Include="Controllers\CentQueriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -437,19 +438,17 @@
     <Content Include="Views\ArtInfoes\Index.cshtml" />
     <Content Include="Views\Home\Image.cshtml" />
     <Content Include="Views\Home\Portfolio.cshtml" />
-    <Content Include="Views\Home\ClassificationInfo.cshtml" />
-    <Content Include="Views\Home\CenturyInfo.cshtml" />
-    <Content Include="Views\Home\Divisions.cshtml" />
+    <Content Include="Views\API\ClassificationInfo.cshtml" />
+    <Content Include="Views\API\CenturyInfo.cshtml" />
     <Content Include="Views\UserInfoes\Create.cshtml" />
-    <Content Include="Views\Home\TextileInfo.cshtml" />
+    <Content Include="Views\API\TextileInfo.cshtml" />
     <Content Include="Views\Home\Query.cshtml" />
-    <Content Include="Views\Home\Show4Explore.cshtml" />
+    <Content Include="Views\Home\SlideShow.cshtml" />
     <Content Include="Views\SurveyFinal\Index.cshtml" />
     <Content Include="Views\SurveyFinal\Survey2.cshtml" />
     <Content Include="Views\SurveyFinal\Survey3.cshtml" />
-    <Content Include="Views\Home\Show4Survey.cshtml" />
     <Content Include="Views\Home\AfterTestSurvey.cshtml" />
-    <Content Include="Views\Home\CultureInfo.cshtml" />
+    <Content Include="Views\API\CultureInfo.cshtml" />
     <Content Include="Views\UserInfoes\ErrorView.cshtml" />
   </ItemGroup>
   <ItemGroup>

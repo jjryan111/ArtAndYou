@@ -1,11 +1,8 @@
-﻿<script src="jquery-3.2.1.js"></script>
-<script src="~/Scripts/THing.js"></script>
-
-@{
-    ViewBag.Title = "Divisions";
+﻿@{
+    ViewBag.Title = "Culture Info";
 }
 
-<h2>Division Info</h2>
+<h2>Culture Info</h2>
 
 <html>
 <body>
@@ -111,7 +108,7 @@
     <p id="99">test</p>
 
     <script>
-            var str = "@ViewBag.Divisions";
+            var str = "@ViewBag.Cultures";
             var res = str.split(",");
             var i = 0;
             for (i = 0; i < 100; i++)
