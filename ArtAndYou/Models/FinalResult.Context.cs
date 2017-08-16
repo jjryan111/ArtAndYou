@@ -26,5 +26,7 @@ namespace ArtAndYou.Models
         }
     
         public virtual DbSet<FINALRESULT> FINALRESULTS { get; set; }
+
+        public System.Data.Entity.DbSet<ArtAndYou.Models.UserInfo> UserInfoes { get; set; }
     }
 }
