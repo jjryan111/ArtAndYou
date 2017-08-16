@@ -531,6 +531,8 @@
     <Content Include="Views\CentQueries\Details.cshtml" />
     <Content Include="Views\CentQueries\Edit.cshtml" />
     <Content Include="Views\CentQueries\Index.cshtml" />
+    <Content Include="Views\Home\Pick6.cshtml" />
+    <Content Include="Views\Home\AfterPick6.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

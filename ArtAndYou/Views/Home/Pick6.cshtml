@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Pick6";
+}
+
+<h2>Pick6</h2>
+
+<h2>This query returned <ins id="totalrecords"></ins> items. A sampling for your enjoyment:</h2>
+
+<html>
+
+<body>
+    <form name="Pick6" onsubmit="return validateForm()" action="AfterPick6" method="get">
+        <input type="checkbox" onclick="" name="image1" id="" value=res[2] />
+        <img src="nothing.jpg" id="1" name="image" alt="" height="200" />
+
+        <input type="checkbox" onclick="" name="image2" id="" value=res[6] />
+        <img src="nothing.jpg" id="2" name="image" alt="" height="200" />
+
+        <input type="checkbox" onclick="" name="image3" id="" value=res[10] />
+        <img src="nothing.jpg" id="3" name="image" alt="" height="200" />
+
+        <input type="checkbox" onclick="" name="image4" id="" value=res[14] />
+        <img src="nothing.jpg" id="4" name="image" alt="" height="200" />
+
+        <input type="checkbox" onclick="" name="image5" id="" value=res[18] />
+        <img src="nothing.jpg" id="5" name="image" alt="" height="200" />
+
+        <input type="checkbox" onclick="" name="image6" id="" value=res[22] />
+        <img src="nothing.jpg" id="6" name="image" alt="" height="200" />
+
+        <button type="submit" value="Submit">Submit</button>
+        <button type="submit" value="Reload">Reload</button>
+        <button type="button" onclick="document.getElementById('').Checked = false;window.location.reload();reset">Reset</button>
+    </form>
+
+    <script>
+            var str = "@ViewBag.ObjectID";
+            var res = str.split(",");
+            var i = 0;
+
+            document.getElementById("totalrecords").innerHTML = res[0];
+
+            for (i = 1; i < 7; i++)
+            {
+                document.getElementById(i).src = res[i*4]; //indices 4, 8, 12, etc hold urls
+            }
+    </script>
+</body>
+</html>

@@ -17,6 +17,7 @@ namespace ArtAndYou.Models
         {
             string APIkey = "&apikey=db4038a0-79da-11e7-aa25-e32c9c02c857";
             string portfolio = "";
+            //API holds links to photos of difference sizes. This is one option:
             string photoSize = "?height=500";
 
             //BLOCK FOR SETTING CRITERIA EQUAL TO SURVEY ANSWERS - doesn't work
@@ -65,6 +66,47 @@ namespace ArtAndYou.Models
 
             return portfolio;
         }
+
+        public string BuildTasteString(/*string classification, string culture, string century*/)
+        {
+            string APIkey = "&apikey=db4038a0-79da-11e7-aa25-e32c9c02c857";
+            string portfolio = "";
+            //API holds links to photos of difference sizes. This is one option:
+            string photoSize = "?height=500";
+
+            //BLOCK FOR HARD CODING SEARCH CRITERIA
+            //string classSpec = "Sculpture";
+            string cultureSpec = "Pre-Columbian";
+            //string centurySpec = "";
+            HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?" /*+ "classification=" + classSpec*/ + "&culture=" + cultureSpec /*+ "&century=" + centurySpec*/ + "&sort=random&hasimage=1&size=100" + APIkey);
+
+            //BLOCK FOR PASSING SEARCH CRITERIA THROUGH METHOD PARAMETERS
+            //HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?sort=random&hasimage=1&size=100" + APIkey);
+
+            request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            StreamReader rd = new StreamReader(response.GetResponseStream());
+            string ApiText = rd.ReadToEnd();
+            JObject o = JObject.Parse(ApiText);
+
+            //set   index[0] = totalrecords
+
+            portfolio += o["info"]["totalrecords"] + ",";
+
+            for (int i = 1; i <= 101; i++)
+            {
+                try
+                {
+                    portfolio += o["records"][i]["classification"] + "," + o["records"][i]["century"] + "," + o["records"][i]["culture"] + "," + o["records"][i]["images"][0]["baseimageurl"] + photoSize + ",";
+                }
+                catch (Exception)
+                {
+                    portfolio += "";
+                }
+            }
+
+            return portfolio;
+        }
     }
 
     public class Input
@@ -83,5 +125,13 @@ namespace ArtAndYou.Models
         public string Name { get; set; }
     }
 
-
+    public class Pick6Results
+    {
+        [Required]
+        public string Classification { get; set; }
+        [Required]
+        public string Culture { get; set; }
+        [Required]
+        public string Century { get; set; }
+    }
 }
