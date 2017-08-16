@@ -34,14 +34,14 @@ namespace ArtAndYou.Models
             //var z = survey.century;
             //HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?classification=" + x + "&culture=" + y + "&century=" + z + "&sort=random&hasimage=1&size=100" + APIkey);
 
-                //BLOCK FOR HARD CODING SEARCH CRITERIA - works:
-                //string classSpec = "Paintings";
-                //string cultureSpec = "French";
-                //string centurySpec = "19th%20century";
-                //HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?classification=" + classSpec + "&culture=" + cultureSpec + "&century=" + centurySpec + "&sort=random&hasimage=1&size=100" + APIkey);
+            //BLOCK FOR HARD CODING SEARCH CRITERIA - works:
+            //string classSpec = "Paintings";
+            //string cultureSpec = "French";
+            //string centurySpec = "19th%20century";
+            //HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?classification=" + classSpec + "&culture=" + cultureSpec + "&century=" + centurySpec + "&sort=random&hasimage=1&size=100" + APIkey);
 
-                //BLOCK FOR PASSING SEARCH CRITERIA THROUGH METHOD PARAMETERS
-                HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?classification=" + classification + "&culture=" + culture + "&century=" + century + "&sort=random&hasimage=1&size=100" + APIkey);
+            //BLOCK FOR PASSING SEARCH CRITERIA THROUGH METHOD PARAMETERS
+            HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?classification=" + classification + "&culture=" + culture + "&century=" + century + "&sort=random&hasimage=1&size=100" + APIkey);
 
             request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -55,15 +55,35 @@ namespace ArtAndYou.Models
                     index[3] = century
             */
 
+            //modify classification search string for display
+            classification = classification.Replace("%20", " ");
+
+            //modify culture search string for display
+            culture = culture.Replace("%20", " ");
+
+            if (culture == "German|French|Italian|British")
+            {
+                culture = "European";
+            }
+            else if (culture == "Japanese|Chinese")
+            {
+                culture = "Asian";
+            }
+
+            //modify century search string for display
             //switch century from search string to display string
             if (century == ancientSearch)
             {
                 century = "Ancient";
             }
 
+            century = century.Replace("%20", " ");
+            century = century.Replace("cent", "Cent");
+            century = century.Replace("mill", "Mill");
+
             portfolio += o["info"]["totalrecords"] + "," + classification + "," + culture + "," + century + ",";
 
-            for (int i = 0; i < 104; i++)
+            for (int i = 0; i <= 99; i++)
             {
                 try
                 {
@@ -74,10 +94,6 @@ namespace ArtAndYou.Models
                     portfolio += "";
                 }
             }
-
-            //does Survey return anything?
-            //portfolio = "0,X:" + x + ",Y:" + y + ",Z:" + z;
-
             return portfolio;
         }
 
