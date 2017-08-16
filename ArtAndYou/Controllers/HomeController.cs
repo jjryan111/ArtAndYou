@@ -15,7 +15,7 @@ using System.Text; //need for code reading SQL database
 
 namespace ArtAndYou.Controllers
 {
-    
+
     public class HomeController : Controller
     {
         string size = "?width=300";
@@ -105,7 +105,7 @@ namespace ArtAndYou.Controllers
                             classification = reader.GetString(2);
                             century = reader.GetString(3);
                             culture = reader.GetString(4);
-                            
+
                         }
                     }
                 }
@@ -279,16 +279,16 @@ namespace ArtAndYou.Controllers
                 }
                 connection.Close();
             }
-                using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
-                using (SqlCommand update = connection.CreateCommand())
-                    {
+            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            using (SqlCommand update = connection.CreateCommand())
+            {
                 update.CommandText = "UPDATE [dbo].[NewTestTable] SET [Classification] = '" + i.Classification + "', [Century] = '" + i.Century + "' WHERE [ID] = '" + currentID + "';";
-                        connection.Open();
-                        update.ExecuteNonQuery();
-                        connection.Close();
-                    }
-                return View();
+                connection.Open();
+                update.ExecuteNonQuery();
+                connection.Close();
             }
+            return View();
+        }
 
         public ActionResult TestSurvey(GetName n)
         {

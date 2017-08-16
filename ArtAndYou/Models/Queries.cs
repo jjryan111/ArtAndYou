@@ -5,6 +5,11 @@ using System.IO;
 using System.Net;
 using ArtAndYou.Models;
 using System.Collections.Generic;
+using System.Data.SqlClient; //need for reading SQL database
+using System.Text; //need for code reading SQL database
+using Newtonsoft.Json;
+
+
 
 namespace ArtAndYou.Models
 {
@@ -138,7 +143,7 @@ namespace ArtAndYou.Models
             return portfolio;
         }
     }
-
+    
     public class Input
     {
         [Required]
