@@ -59,11 +59,28 @@ namespace ArtAndYou.Controllers
             if (ModelState.IsValid)
             {
                 db.UserInfoes.Add(userInfo);
-                db.SaveChanges();
-                return RedirectToAction("Index","SurveyFinal");
+                try
+                {
+                    db.SaveChanges();
+                    return RedirectToAction("Index", "SurveyFinal");
+                }
+                catch (Exception e)
+                {
+                    ViewBag.Message = "You entered to many characters";
+                    ErrorView();
+
+                }
+                
+                
             }
 
             return View("Index", "Survey1");
+        }
+        public ActionResult ErrorView()
+        {
+            return View();
+            
+            
         }
 
         // GET: UserInfoes/Edit/5
