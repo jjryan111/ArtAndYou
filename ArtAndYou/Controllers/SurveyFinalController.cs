@@ -10,11 +10,24 @@ namespace ArtAndYou.Controllers
 {
     public class SurveyFinalController : Controller
     {
+        private ArtInfoEntities2 db = new ArtInfoEntities2();
+        private ArtInfoEntities1 db2 = new ArtInfoEntities1();
+
         // GET: SurveyFinal
         public ActionResult Index()
         {
-            return View();
+            return View(db.Survey1.ToList());
         }
+
+        public ActionResult Survey2()
+        {
+            return View(db.Survey2.ToList());
+        }
+        public ActionResult Survey3()
+        {
+            return View(db.Survey3.ToList());
+        }
+
         public ActionResult Show4Survey1(Survey1 n)
         {
             int ID = 0;
@@ -55,7 +68,7 @@ namespace ArtAndYou.Controllers
                 connection.Close();
             }
             //ViewBag.Name = n.Year;
-            return RedirectToAction("Index", "Survey2");
+            return RedirectToAction("Survey2");
         }
         public ActionResult Show4Survey2(CentQuery n)
         {
@@ -97,7 +110,7 @@ namespace ArtAndYou.Controllers
                 connection.Close();
             }
             ViewBag.Name = n.Year;
-            return RedirectToAction("Index", "Survey3");
+            return RedirectToAction("Survey3");
         }
         public ActionResult Show4Survey3(Survey3 n)
         {

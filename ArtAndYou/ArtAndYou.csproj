@@ -153,13 +153,6 @@
     <Compile Include="Controllers\CentQueriesController.cs" />
     <Compile Include="Controllers\FINALRESULTsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MediumController.cs" />
-    <Compile Include="Controllers\Survey1Controller.cs" />
-    <Compile Include="Controllers\Survey1ResultsController.cs" />
-    <Compile Include="Controllers\Survey2Controller.cs" />
-    <Compile Include="Controllers\Survey2ResultsController.cs" />
-    <Compile Include="Controllers\Survey3Controller.cs" />
-    <Compile Include="Controllers\Survey3ResultsController.cs" />
     <Compile Include="Controllers\SurveyFinalController.cs" />
     <Compile Include="Controllers\UserInfoesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -219,9 +212,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalResult.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Medium.cs" />
     <Compile Include="Models\Queries.cs" />
-    <Compile Include="Models\Survey.cs" />
     <Compile Include="Models\Survey1.cs">
       <DependentUpon>SurveyViewsfromSQL.tt</DependentUpon>
     </Compile>
@@ -453,9 +444,9 @@
     <Content Include="Views\Home\TextileInfo.cshtml" />
     <Content Include="Views\Home\Query.cshtml" />
     <Content Include="Views\Home\Show4Explore.cshtml" />
-    <Content Include="Views\Survey1\Index.cshtml" />
-    <Content Include="Views\Survey2\Index.cshtml" />
-    <Content Include="Views\Survey3\Index.cshtml" />
+    <Content Include="Views\SurveyFinal\Index.cshtml" />
+    <Content Include="Views\SurveyFinal\Survey2.cshtml" />
+    <Content Include="Views\SurveyFinal\Survey3.cshtml" />
     <Content Include="Views\Home\Show4Survey.cshtml" />
     <Content Include="Views\Home\AfterTestSurvey.cshtml" />
     <Content Include="Views\Home\CultureInfo.cshtml" />
