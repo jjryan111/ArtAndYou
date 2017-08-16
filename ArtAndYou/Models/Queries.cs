@@ -15,10 +15,17 @@ namespace ArtAndYou.Models
 
         public string ImageSearch(string classification, string culture, string century)
         {
+            string ancientSearch = "5th%20century|4th%20century%20|3rd%20century%20CE|2nd%20century%20CE|1st%20century%20CE|1st%20century%20BCE|2nd%20century%20BCE|3rd%20century%20BCE|4th%20century%20BCE|5th%20century%20BCE|6th%20century%20BCE|7th%20century%20BCE|8th%20century%20BCE|9th%20century%20BCE|10th%20century%20BCE|11th%20century%20BCE|12th%20century%20BCE|13th%20century%20BCE|14th%20century%20BCE|15th%20century%20BCE|16th%20century%20BCE|17th%20century%20BCE|18th%20century%20BCE|19th%20century%20BCE|20th%20century%20BCE";
             string APIkey = "&apikey=db4038a0-79da-11e7-aa25-e32c9c02c857";
             string portfolio = "";
             //API holds links to photos of difference sizes. This is one option:
             string photoSize = "?height=500";
+
+            //change 'Ancient' from survey/database to search string
+            if (century == "Ancient")
+            {
+                century = ancientSearch;
+            }
 
             //BLOCK FOR SETTING CRITERIA EQUAL TO SURVEY ANSWERS - doesn't work
             //Survey survey = new Survey();
@@ -27,14 +34,14 @@ namespace ArtAndYou.Models
             //var z = survey.century;
             //HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?classification=" + x + "&culture=" + y + "&century=" + z + "&sort=random&hasimage=1&size=100" + APIkey);
 
-            //BLOCK FOR HARD CODING SEARCH CRITERIA - works:
-            //string classSpec = "Paintings";
-            //string cultureSpec = "French";
-            //string centurySpec = "19th%20century";
-            //HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?classification=" + classSpec + "&culture=" + cultureSpec + "&century=" + centurySpec + "&sort=random&hasimage=1&size=100" + APIkey);
+                //BLOCK FOR HARD CODING SEARCH CRITERIA - works:
+                //string classSpec = "Paintings";
+                //string cultureSpec = "French";
+                //string centurySpec = "19th%20century";
+                //HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?classification=" + classSpec + "&culture=" + cultureSpec + "&century=" + centurySpec + "&sort=random&hasimage=1&size=100" + APIkey);
 
-            //BLOCK FOR PASSING SEARCH CRITERIA THROUGH METHOD PARAMETERS
-            HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?classification=" + classification + "&culture=" + culture + "&century=" + century + "&sort=random&hasimage=1&size=100" + APIkey);
+                //BLOCK FOR PASSING SEARCH CRITERIA THROUGH METHOD PARAMETERS
+                HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?classification=" + classification + "&culture=" + culture + "&century=" + century + "&sort=random&hasimage=1&size=100" + APIkey);
 
             request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -47,6 +54,13 @@ namespace ArtAndYou.Models
                     index[2] = culture
                     index[3] = century
             */
+
+            //switch century from search string to display string
+            if (century == ancientSearch)
+            {
+                century = "Ancient";
+            }
+
             portfolio += o["info"]["totalrecords"] + "," + classification + "," + culture + "," + century + ",";
 
             for (int i = 0; i < 104; i++)
