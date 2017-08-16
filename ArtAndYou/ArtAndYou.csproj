@@ -153,14 +153,6 @@
     <Compile Include="Controllers\CentQueriesController.cs" />
     <Compile Include="Controllers\FINALRESULTsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MediumController.cs" />
-    <Compile Include="Controllers\Survey1Controller.cs" />
-    <Compile Include="Controllers\Survey1ResultsController.cs" />
-    <Compile Include="Controllers\Survey2Controller.cs" />
-    <Compile Include="Controllers\Survey2ResultsController.cs" />
-    <Compile Include="Controllers\Survey3Controller.cs" />
-    <Compile Include="Controllers\Survey3ResultsController.cs" />
-    <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Controllers\SurveyFinalController.cs" />
     <Compile Include="Controllers\UserInfoesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -220,9 +212,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalResult.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Medium.cs" />
     <Compile Include="Models\Queries.cs" />
-    <Compile Include="Models\Survey.cs" />
     <Compile Include="Models\Survey1.cs">
       <DependentUpon>SurveyViewsfromSQL.tt</DependentUpon>
     </Compile>
@@ -445,97 +435,25 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\ArtInfoes\Create.cshtml" />
-    <Content Include="Views\ArtInfoes\Delete.cshtml" />
-    <Content Include="Views\ArtInfoes\Details.cshtml" />
-    <Content Include="Views\ArtInfoes\Edit.cshtml" />
     <Content Include="Views\ArtInfoes\Index.cshtml" />
-    <Content Include="Views\Home\Data.cshtml" />
     <Content Include="Views\Home\Image.cshtml" />
     <Content Include="Views\Home\Portfolio.cshtml" />
-    <Content Include="Views\Medium\Medium.cshtml" />
-    <Content Include="Views\Medium\Photography.cshtml" />
-    <Content Include="Views\Medium\Painting.cshtml" />
-    <Content Include="Views\Medium\Sculpture.cshtml" />
-    <Content Include="Views\Medium\Q1Genre.cshtml" />
-    <Content Include="Views\Medium\Q2Category.cshtml" />
     <Content Include="Views\Home\ClassificationInfo.cshtml" />
     <Content Include="Views\Home\CenturyInfo.cshtml" />
     <Content Include="Views\Home\Divisions.cshtml" />
     <Content Include="Views\UserInfoes\Create.cshtml" />
-    <Content Include="Views\UserInfoes\Delete.cshtml" />
-    <Content Include="Views\UserInfoes\Details.cshtml" />
-    <Content Include="Views\UserInfoes\Edit.cshtml" />
-    <Content Include="Views\UserInfoes\Index.cshtml" />
     <Content Include="Views\Home\TextileInfo.cshtml" />
     <Content Include="Views\Home\Query.cshtml" />
-    <Content Include="Views\Survey\SurveyQ1Classification.cshtml" />
-    <Content Include="Views\Survey\Index.cshtml" />
-    <Content Include="Views\Survey\SurveyQ2PaintCent.cshtml" />
-    <Content Include="Views\Survey\SurveyQ3PaintCult.cshtml" />
     <Content Include="Views\Home\Show4Explore.cshtml" />
-    <Content Include="Views\Survey\Choice1.cshtml" />
-    <Content Include="Views\Survey\SurveyQ2PhotoCent.cshtml" />
-    <Content Include="Views\Survey\SurveyQ2SculptCent.cshtml" />
-    <Content Include="Views\Survey\SurveyQ3SculptCult.cshtml" />
-    <Content Include="Views\Survey\SurveyQ3PhotoCult.cshtml" />
-    <Content Include="Views\Survey1\Create.cshtml" />
-    <Content Include="Views\Survey1\Delete.cshtml" />
-    <Content Include="Views\Survey1\Details.cshtml" />
-    <Content Include="Views\Survey1\Edit.cshtml" />
-    <Content Include="Views\Survey1\Index.cshtml" />
-    <Content Include="Views\Survey1results\Create.cshtml" />
-    <Content Include="Views\Survey1results\Delete.cshtml" />
-    <Content Include="Views\Survey1results\Details.cshtml" />
-    <Content Include="Views\Survey1results\Edit.cshtml" />
-    <Content Include="Views\Survey1results\Index.cshtml" />
-    <Content Include="Views\Survey2\Create.cshtml" />
-    <Content Include="Views\Survey2\Delete.cshtml" />
-    <Content Include="Views\Survey2\Details.cshtml" />
-    <Content Include="Views\Survey2\Edit.cshtml" />
-    <Content Include="Views\Survey2\Index.cshtml" />
-    <Content Include="Views\Survey2results\Create.cshtml" />
-    <Content Include="Views\Survey2results\Delete.cshtml" />
-    <Content Include="Views\Survey2results\Details.cshtml" />
-    <Content Include="Views\Survey2results\Edit.cshtml" />
-    <Content Include="Views\Survey2results\Index.cshtml" />
-    <Content Include="Views\Survey3\Create.cshtml" />
-    <Content Include="Views\Survey3\Delete.cshtml" />
-    <Content Include="Views\Survey3\Details.cshtml" />
-    <Content Include="Views\Survey3\Edit.cshtml" />
-    <Content Include="Views\Survey3\Index.cshtml" />
-    <Content Include="Views\Survey3results\Create.cshtml" />
-    <Content Include="Views\Survey3results\Delete.cshtml" />
-    <Content Include="Views\Survey3results\Details.cshtml" />
-    <Content Include="Views\Survey3results\Edit.cshtml" />
-    <Content Include="Views\Survey3results\Index.cshtml" />
-    <Content Include="Views\Surveytemp\Century.cshtml" />
-    <Content Include="Views\Surveytemp\Painting.cshtml" />
-    <Content Include="Views\Surveytemp\Photography.cshtml" />
-    <Content Include="Views\Surveytemp\Q1Genre.cshtml" />
-    <Content Include="Views\Surveytemp\Q2Category.cshtml" />
-    <Content Include="Views\Surveytemp\Q3Culture.cshtml" />
-    <Content Include="Views\Surveytemp\Sculpture.cshtml" />
-    <Content Include="Views\FINALRESULTs\Create.cshtml" />
-    <Content Include="Views\FINALRESULTs\Delete.cshtml" />
-    <Content Include="Views\FINALRESULTs\Details.cshtml" />
-    <Content Include="Views\FINALRESULTs\Edit.cshtml" />
-    <Content Include="Views\FINALRESULTs\Index.cshtml" />
-    <Content Include="Views\Medium\Index.cshtml" />
+    <Content Include="Views\SurveyFinal\Index.cshtml" />
+    <Content Include="Views\SurveyFinal\Survey2.cshtml" />
+    <Content Include="Views\SurveyFinal\Survey3.cshtml" />
     <Content Include="Views\Home\Show4Survey.cshtml" />
-    <Content Include="Views\Home\TestSurvey.cshtml" />
-    <Content Include="Views\Home\GetName.cshtml" />
     <Content Include="Views\Home\AfterTestSurvey.cshtml" />
     <Content Include="Views\Home\CultureInfo.cshtml" />
-    <Content Include="Views\CentQueries\Create.cshtml" />
-    <Content Include="Views\CentQueries\Delete.cshtml" />
-    <Content Include="Views\CentQueries\Details.cshtml" />
-    <Content Include="Views\CentQueries\Edit.cshtml" />
-    <Content Include="Views\CentQueries\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\SurveyFinal\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
