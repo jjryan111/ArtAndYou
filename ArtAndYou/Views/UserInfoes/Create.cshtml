@@ -22,7 +22,7 @@
                 @Html.ValidationMessageFor(model => model.Name, "Please enter a name that is 50 characters or less", new { @class = "text-danger" })
                 
             </div>
-            @ViewBag.Message
+            
         </div>
 
         <div class="form-group">
@@ -34,7 +34,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Home", "Index","Home")
 </div>
 
 @section Scripts {

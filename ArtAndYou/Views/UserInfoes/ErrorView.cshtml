@@ -3,8 +3,25 @@
     ViewBag.Title = "ErrorView";
 }
 
-<h2>ErrorView</h2>
+<h2>Error!!</h2>
 
-@ViewBag.Message
+<h1>@ViewBag.Message</h1>
 
-@Html.ActionLink("Go Back", "Create")
+
+<h3>@Html.ActionLink("Please Go Back and Try Again", "Create")</h3>
+
+<style>
+    h3{
+        color:lavenderblush;
+        font-weight:bold;
+    }
+    h2{
+        color:red;
+        font-weight:bolder;
+    }
+    h1{
+        color:firebrick;
+        font-weight:bold;
+    }
+    
+</style>

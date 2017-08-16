@@ -75,14 +75,7 @@ namespace ArtAndYou.Controllers
 
             return View("Index", "Survey1");
         }
-        public ActionResult ErrorView()
-        {
-           // ViewBag.Message = "You entered to many characters";
-            return View();           
-            
-        }
-
-        // GET: UserInfoes/Edit/5
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)
