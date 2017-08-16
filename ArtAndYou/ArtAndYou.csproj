@@ -151,7 +151,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\APIController.cs" />
     <Compile Include="Controllers\ArtInfoesController.cs" />
-    <Compile Include="Controllers\CentQueriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SurveyFinalController.cs" />
     <Compile Include="Controllers\UserInfoesController.cs" />

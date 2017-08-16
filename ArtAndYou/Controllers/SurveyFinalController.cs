@@ -27,24 +27,34 @@ namespace ArtAndYou.Controllers
         {
             return View(db.Survey3.ToList());
         }
-
-        public ActionResult Show4Survey1(Survey1 n)
+        public SqlConnectionStringBuilder ConnString()
         {
-            int ID = 0;
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = "artserverfinal.database.windows.net";
             builder.UserID = "finalproject";
             builder.Password = "Teamproject1";
             builder.InitialCatalog = "ArtInfo";
+            return builder;
+        }
+        public string DBQuery()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Culture], [Century] ");
+            sb.Append("FROM [dbo].[UserInfo] ");
+            sb.Append("ORDER BY [ID] DESC");
+            String sql = sb.ToString();
+            return sql;
+        }
 
+        public ActionResult Show4Survey1(Survey1 n)
+        {
+            int ID = 0;
+            SqlConnectionStringBuilder builder = ConnString();
+  
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
                 connection.Open();
-                StringBuilder sb = new StringBuilder();
-                sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Culture], [Century] ");
-                sb.Append("FROM [dbo].[UserInfo] ");
-                sb.Append("ORDER BY [ID] DESC");
-                String sql = sb.ToString();
+                String sql = DBQuery();
 
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
@@ -67,26 +77,17 @@ namespace ArtAndYou.Controllers
                 command.ExecuteNonQuery();
                 connection.Close();
             }
-            //ViewBag.Name = n.Year;
             return RedirectToAction("Survey2");
         }
-        public ActionResult Show4Survey2(CentQuery n)
+
+        public ActionResult Show4Survey2(Survey2 n)
         {
             int ID = 0;
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "artserverfinal.database.windows.net";
-            builder.UserID = "finalproject";
-            builder.Password = "Teamproject1";
-            builder.InitialCatalog = "ArtInfo";
-
+            SqlConnectionStringBuilder builder = ConnString();
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
                 connection.Open();
-                StringBuilder sb = new StringBuilder();
-                sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Culture], [Century] ");
-                sb.Append("FROM [dbo].[UserInfo] ");
-                sb.Append("ORDER BY [ID] DESC");
-                String sql = sb.ToString();
+                String sql = DBQuery();
 
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
@@ -115,20 +116,11 @@ namespace ArtAndYou.Controllers
         public ActionResult Show4Survey3(Survey3 n)
         {
             int ID = 0;
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "artserverfinal.database.windows.net";
-            builder.UserID = "finalproject";
-            builder.Password = "Teamproject1";
-            builder.InitialCatalog = "ArtInfo";
-
+            SqlConnectionStringBuilder builder = ConnString();
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
                 connection.Open();
-                StringBuilder sb = new StringBuilder();
-                sb.Append("SELECT TOP 1 [ID], [Name], [Classification], [Culture], [Century] ");
-                sb.Append("FROM [dbo].[UserInfo] ");
-                sb.Append("ORDER BY [ID] DESC");
-                String sql = sb.ToString();
+                String sql = DBQuery();
 
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {

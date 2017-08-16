@@ -67,8 +67,7 @@ namespace ArtAndYou.Controllers
                 catch (Exception e)
                 {
                     ViewBag.Message = "You entered to many characters";
-                    return ErrorView();
-
+                    return View("ErrorView");
                 }
                 
                 
@@ -76,14 +75,7 @@ namespace ArtAndYou.Controllers
 
             return View("Index", "Survey1");
         }
-        public ActionResult ErrorView()
-        {
-            return View();
-            
-            
-        }
-
-        // GET: UserInfoes/Edit/5
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)

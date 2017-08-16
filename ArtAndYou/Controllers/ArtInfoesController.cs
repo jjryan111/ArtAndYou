@@ -37,59 +37,59 @@ namespace ArtAndYou.Controllers
             return View(artInfo);
         }
 
-        // GET: ArtInfoes/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //GET: ArtInfoes/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
-        // POST: ArtInfoes/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Artist,Title,Year,Genre,Medium,ImageUrl")] ArtInfo artInfo)
-        {
-            if (ModelState.IsValid)
-            {
-                db.ArtInfoes.Add(artInfo);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+        //// POST: ArtInfoes/Create
+        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create([Bind(Include = "ID,Artist,Title,Year,Genre,Medium,ImageUrl")] ArtInfo artInfo)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.ArtInfoes.Add(artInfo);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
 
-            return View(artInfo);
-        }
+        //    return View(artInfo);
+        //}
 
-        // GET: ArtInfoes/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ArtInfo artInfo = db.ArtInfoes.Find(id);
-            if (artInfo == null)
-            {
-                return HttpNotFound();
-            }
-            return View(artInfo);
-        }
+        //GET: ArtInfoes/Edit/5
+        //public ActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    ArtInfo artInfo = db.ArtInfoes.Find(id);
+        //    if (artInfo == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(artInfo);
+        //}
 
-        // POST: ArtInfoes/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Artist,Title,Year,Genre,Medium,ImageUrl")] ArtInfo artInfo)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(artInfo).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(artInfo);
-        }
+        ////POST: ArtInfoes/Edit/5
+        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //    [HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit([Bind(Include = "ID,Artist,Title,Year,Genre,Medium,ImageUrl")] ArtInfo artInfo)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(artInfo).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(artInfo);
+        //}
 
         // GET: ArtInfoes/Delete/5
         public ActionResult Delete(int? id)
@@ -125,6 +125,7 @@ namespace ArtAndYou.Controllers
             }
             base.Dispose(disposing);
         }
-       
+
     }
 }
+
