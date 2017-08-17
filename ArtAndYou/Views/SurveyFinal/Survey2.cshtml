@@ -41,7 +41,7 @@ else
         @foreach (var item in Model)
         {
             <td>
-                <input type="radio" name="Medium" value="@item.Year">
+                <input type="radio" name="Year" value="@item.Year">
                 <img src="@Url.Content(item.ImageUrl)" height="200" />
             </td>
         }
