@@ -8,18 +8,21 @@
 <form name="Medium" id="Choice2" action="@Url.Action("Show4Survey2", "SurveyFinal")" method="post">>
 
     <table class="table">
-        <tr>
+@if (Model.Count() > 3)
+{
+    <tr>
 
-            @for (var item = 0; item <= 3; item++)
-            {
-                <td>
-                    
-                    <input type="radio" name="Year" value="@x[item].Year.Trim()">
+       @for (var i = 0; i <= 3; i++)
+        {
+        <td>
 
-                    <img src="@Url.Content(@x[item].ImageUrl)" height="200" />
-                </td>
-            }
-        </tr>
+            <input type="radio" name="Year" value="@x[i].Year.Trim()">
+
+            <img src="@Url.Content(@x[i].ImageUrl)" height="200" />
+        </td>
+        }
+
+    </tr>
         <tr>
 
             @for (var item = 4; item < x.Count; item++)
@@ -31,6 +34,19 @@
                 </td>
             }
         </tr>
+}
+else
+{
+    <tr>
+        @foreach (var item in Model)
+        {
+            <td>
+                <input type="radio" name="Medium" value="@item.Year">
+                <img src="@Url.Content(item.ImageUrl)" height="200" />
+            </td>
+        }
+    </tr>
+}
     </table>
     <input type="submit" id="ClassSubmit" value="Submit">
 </form>
