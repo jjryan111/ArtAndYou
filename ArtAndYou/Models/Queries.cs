@@ -32,14 +32,7 @@ namespace ArtAndYou.Models
                 century = ancientSearch;
             }
 
-            //BLOCK FOR SETTING CRITERIA EQUAL TO SURVEY ANSWERS - doesn't work
-            //Survey survey = new Survey();
-            //var x = survey.classification;
-            //var y = survey.culture;
-            //var z = survey.century;
-            //HttpWebRequest request = WebRequest.CreateHttp("http://api.harvardartmuseums.org/object?classification=" + x + "&culture=" + y + "&century=" + z + "&sort=random&hasimage=1&size=100" + APIkey);
-
-            //BLOCK FOR HARD CODING SEARCH CRITERIA - works:
+            //BLOCK FOR HARD CODING SEARCH CRITERIA (for testing purposes):
             //string classSpec = "Paintings";
             //string cultureSpec = "French";
             //string centurySpec = "19th%20century";

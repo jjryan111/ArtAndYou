@@ -435,7 +435,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ArtInfoes\Index.cshtml" />
-    <Content Include="Views\Home\Image.cshtml" />
     <Content Include="Views\Home\Portfolio.cshtml" />
     <Content Include="Views\API\ClassificationInfo.cshtml" />
     <Content Include="Views\API\CenturyInfo.cshtml" />
@@ -446,7 +445,6 @@
     <Content Include="Views\SurveyFinal\Index.cshtml" />
     <Content Include="Views\SurveyFinal\Survey2.cshtml" />
     <Content Include="Views\SurveyFinal\Survey3.cshtml" />
-    <Content Include="Views\Home\AfterTestSurvey.cshtml" />
     <Content Include="Views\API\CultureInfo.cshtml" />
     <Content Include="Views\UserInfoes\ErrorView.cshtml" />
   </ItemGroup>
