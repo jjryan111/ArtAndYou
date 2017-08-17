@@ -80,80 +80,80 @@ namespace ArtAndYou.Controllers
             return View();
         }
 
-        public ActionResult AfterTestSurvey(Input i)
-        {
-            int currentID = 0;
+        //public ActionResult AfterTestSurvey(Input i)
+        //{
+        //    int currentID = 0;
 
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "artserverfinal.database.windows.net";
-            builder.UserID = "finalproject";
-            builder.Password = "Teamproject1";
-            builder.InitialCatalog = "ArtInfo";
-            //--------------
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
-            {
-                connection.Open();
-                StringBuilder sb = new StringBuilder();
-                sb.Append("SELECT TOP 1 [ID]");
-                sb.Append("FROM [dbo].[NewTestTable] ");
-                sb.Append("ORDER BY [ID] DESC");
-                String sql = sb.ToString();
+        //    SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+        //    builder.DataSource = "artserverfinal.database.windows.net";
+        //    builder.UserID = "finalproject";
+        //    builder.Password = "Teamproject1";
+        //    builder.InitialCatalog = "ArtInfo";
+        //    //--------------
+        //    using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+        //    {
+        //        connection.Open();
+        //        StringBuilder sb = new StringBuilder();
+        //        sb.Append("SELECT TOP 1 [ID]");
+        //        sb.Append("FROM [dbo].[NewTestTable] ");
+        //        sb.Append("ORDER BY [ID] DESC");
+        //        String sql = sb.ToString();
 
-                using (SqlCommand read = new SqlCommand(sql, connection))
-                {
-                    using (SqlDataReader reader = read.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            //currentID = int.Parse(reader.GetString(0));
-                            currentID = reader.GetInt32(0);
-                        }
-                    }
-                }
-                connection.Close();
-            }
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
-            using (SqlCommand update = connection.CreateCommand())
-            {
-                update.CommandText = "UPDATE [dbo].[NewTestTable] SET [Classification] = '" + i.Classification + "', [Century] = '" + i.Century + "' WHERE [ID] = '" + currentID + "';";
-                connection.Open();
-                update.ExecuteNonQuery();
-                connection.Close();
-            }
-            return View();
-        }
+        //        using (SqlCommand read = new SqlCommand(sql, connection))
+        //        {
+        //            using (SqlDataReader reader = read.ExecuteReader())
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    //currentID = int.Parse(reader.GetString(0));
+        //                    currentID = reader.GetInt32(0);
+        //                }
+        //            }
+        //        }
+        //        connection.Close();
+        //    }
+        //    using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+        //    using (SqlCommand update = connection.CreateCommand())
+        //    {
+        //        update.CommandText = "UPDATE [dbo].[NewTestTable] SET [Classification] = '" + i.Classification + "', [Century] = '" + i.Century + "' WHERE [ID] = '" + currentID + "';";
+        //        connection.Open();
+        //        update.ExecuteNonQuery();
+        //        connection.Close();
+        //    }
+        //    return View();
+        //}
 
-        public ActionResult TestSurvey(GetName n)
-        {
-            string name = n.Name;
+        //public ActionResult TestSurvey(GetName n)
+        //{
+        //    string name = n.Name;
 
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "artserverfinal.database.windows.net";
-            builder.UserID = "finalproject";
-            builder.Password = "Teamproject1";
-            builder.InitialCatalog = "ArtInfo";
+        //    SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+        //    builder.DataSource = "artserverfinal.database.windows.net";
+        //    builder.UserID = "finalproject";
+        //    builder.Password = "Teamproject1";
+        //    builder.InitialCatalog = "ArtInfo";
 
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
-            {
-                int currentID = 0;
+        //    using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+        //    {
+        //        int currentID = 0;
 
-                connection.Open();
-                using (SqlCommand update = connection.CreateCommand())
-                {
-                    update.CommandText = "INSERT INTO [dbo].[NewTestTable] ([Name], [Classification], [Century], [Culture]) VALUES ('" + n.Name + "', '', '', '')";
-                    //connection.Open();
-                    update.ExecuteNonQuery();
-                    connection.Close();
-                }
-                ViewBag.Name = n.Name;
-                return View();
-            }
-        }
+        //        connection.Open();
+        //        using (SqlCommand update = connection.CreateCommand())
+        //        {
+        //            update.CommandText = "INSERT INTO [dbo].[NewTestTable] ([Name], [Classification], [Century], [Culture]) VALUES ('" + n.Name + "', '', '', '')";
+        //            //connection.Open();
+        //            update.ExecuteNonQuery();
+        //            connection.Close();
+        //        }
+        //        ViewBag.Name = n.Name;
+        //        return View();
+        //    }
+        //}
 
-        public ActionResult GetName()
-        {
-            return View();
-        }
+        //public ActionResult GetName()
+        //{
+        //    return View();
+        //}
 
         public ActionResult About()
         {
